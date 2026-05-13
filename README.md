@@ -1,7 +1,7 @@
 # QA_Portfolio
 
 
-Das Repository "QA_Portfolio" ist eine praxisorientierte Zusammenstellung für Quality Assurance und Testautomatisierung. Es dokumentiert sowohl den Software Testing Life Cycle (STLC) als auch konkrete Aufgaben zur Automatisierung mit Python, Pytest, Selenium und XPath.
+Das Repository "QA_Portfolio" ist eine praxisorientierte Zusammenstellung für Quality Assurance - Testautomatisierung. Es dokumentiert sowohl den Software Testing Life Cycle (STLC) als auch konkrete Aufgaben zur Automatisierung mit Python, Pytest, Selenium und XPath.
 
 _____________________________________________________________________________________________________________________
 
