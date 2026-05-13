@@ -38,8 +38,6 @@ Der Testplan sollte folgende Informationen enthalten:
 4. Testumfang (Scope)
 5. Testarten (z. B. funktionale Tests, nicht-funktionale Tests, Regressionstests, Abnahmetests)
 
-Die Studierenden können kreativ sein und überlegen, wie es in der Praxis wäre.
-
 
 _____________________________________________________________________________________________________________________
 
@@ -69,10 +67,16 @@ Der Webshop richtet sich an Neukunden und bestehende Kunden, die online Lebensmi
 **Funktionalitäten:**
 
 - Registrierung und Login
-- Hochladen von Profilbildern
-- Freunde finden und zu Favoriten hinzufügen
-- Werbung per kostenpflichtigem Abo entfernen
-- Geschichten im Profil erstellen und anzeigen
+- Produktsuche
+- Produkt Kategorien
+- Filter nach Preis
+- Favoriten
+- Warenkorb
+- Kontakt
+- Home / Startseite
+- Bewertungen abgeben mit Sternen und Text
+- Altersverifikation für Alkohol (ab 18 Jahre)
+- Gratisversandkosten und Versandkosten
   
 
 ## 2. Teststrategie entwerfen
@@ -81,6 +85,7 @@ Der Webshop richtet sich an Neukunden und bestehende Kunden, die online Lebensmi
 
 - **Im Umfang enthalten:**
     - Registrierung & Login
+    - Produktsuche / Filter / Kategorien
     - Altersverifikation für alkoholische Produkte 
     - gratis Versandkosten ab einem Bestellwert von 20 Euro
     - 5-Sterne-Bewertungssystem und Bewertung mit Text(max. 300 Wörter)
@@ -134,8 +139,10 @@ Der Webshop richtet sich an Neukunden und bestehende Kunden, die online Lebensmi
 - Sicherheitsrisiken sind beseitigt
 - Nutzer finden sich problemlos zurecht
 - Verifikation für alkoholische Produkte ist fehlerfrei
-- Bewerungssystem funktioniert fehlerfrei
-- Versandkosten ab 20 Euro kostenlos
+- Usability ist barrierefrei und nutzerfreundlich
+- Bewertungssystem funktioniert fehlerfrei
+- Versandkosten kostenlos ab einem Bestellwert von 20 Euro 
+- Versandkosten enthalten 5 Euro ab einem Bestellwert unter 20 Euro 
   
 
 ## 4. Testkriterien definieren
@@ -172,8 +179,8 @@ Der Webshop richtet sich an Neukunden und bestehende Kunden, die online Lebensmi
 - Umgebungen:
   - Entwicklung (DEV)
   - Test (TEST)
-  - ACC (Abnahme)
-  - PROD
+  - Abnahme (ACC)
+  - Produktion (PROD)
 
 
 ## 7. Zeitplan und Aufwandsschätzung
