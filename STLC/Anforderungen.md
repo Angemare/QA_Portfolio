@@ -76,16 +76,18 @@ Webshop mit folgenden Grundfunktionen:
 
   -  Versandkosten entfallen ab einem bestimmten Bestellwert. Darunter fallen Versandkosten an.
 
-1\. Was passiert, wenn ein Produkt entfernt/hinzugefügt wird und der Betrag nun unter/über 20 ist?
+1\. Was passiert, wenn ein Produkt im Warenkorb entfernt/hinzugefügt wird und der Betrag nun unter/über 20 ist?
 
-2\. Sind die Versandkosten bei einem Mindestbestellwert von 20 Euro versandkostenfrei oder > 20 Euro ?
+2\. Sind die Versandkosten bei einem Mindestbestellwert von (>=) 20 Euro versandkostenfrei oder > 20 Euro ?
 
-3\. Passen sich die Versandkosten beim Aktualisieren der Seite erst an? 
+3\. Passen sich die Versandkosten beim Aktualisieren der Seite im Warenkorb erst an? 
+
+4\. Wird der Differenzwert in Euro für einen kostenlosen Versand im Warenkorb angegeben? (Bsp. "Es fehlen noch xy Euro für einen gratis Versand") 
 
 
 **Detaillierte Anforderung:**
 
-  -  Der Kunde kann im Warenkorb Produkte hinzufügen sowie entfernen und die Versandkosten passen sich automatisch        an ohne die Seite zu Aktualisieren. Die Versandkosten sind ab einem Mindestbestellwert von 20 Euro kostenlos.        Unter 20 Euro zahlt der Kunde 5 Euro Versandkosten. 
+  -  Der Kunde kann im Warenkorb Produkte hinzufügen sowie entfernen und die Versandkosten passen sich automatisch        an ohne die Seite zu Aktualisieren. Die Versandkosten sind ab einem Mindestbestellwert von 20 Euro kostenlos.        Unter 20 Euro zahlt der Kunde 5 Euro Versandkosten. Der Kunde wird darüber informiert, wieviel Euro fehlen bis       zum gratis Versand.
 
 
 
