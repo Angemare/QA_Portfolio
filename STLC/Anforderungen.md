@@ -35,6 +35,7 @@ Webshop mit folgenden Grundfunktionen:
   - Nutzer sollen Produkte mit einem 5-Sterne-System bewerten und zusätzlich schriftliches Feedback hinterlassen         können.
 
 **Fragen:**
+
 1\. Kann die maximale Anzahl an Wörter überschritten werden? (300 Wörter max.)
 
 2\. Ist es möglich Feedback ohne Text abzugeben?
