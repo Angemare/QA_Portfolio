@@ -37,7 +37,7 @@ ________________________________________________________________________________
   - `Aufgabe - pytest/ - Pytest-Übungen mit parametrisierten, Edge Case Testing (Randfällen) und negativen Tests
     (Negative Testing)`
     
-  - `Aufgabe_selenium/ - Web-Automatisierung mit Selenium, Parametrisierung & Fixtures und Benutzer                       Registrierung`
+  - `Aufgabe_selenium/ - Web-Automatisierung mit Selenium, Parametrisierung & Fixtures und Benutzer Registrierung`
 
   - `Aufgabe - XPath/ - XPath-Lösungen inklusive Referenz-HTML`
     
