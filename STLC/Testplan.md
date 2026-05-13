@@ -187,16 +187,16 @@ Der Webshop richtet sich an Neukunden und bestehende Kunden, die online Lebensmi
 
 | Aktivität | Start | Ende | Umgebung | Verantwortlich | Aufwand |
 | --- | --- | --- | --- | --- | --- |
-| Testplanung | 01.08.2024 | 05.08.2024 | Alle | Testmanager | 20 Std. |
-| Testfalldesign | 06.08.2024 | 15.08.2024 | Alle | QA-Team | 40 Std. |
-| Unittest | 16.08.2024 | 25.08.2024 | DEV | Entwicklerteam | 60 Std. |
-| Integrationstest | 26.08.2024 | 30.08.2024 | TEST | QA-Team | 30 Std. |
-| Systemtest | 01.09.2024 | 10.09.2024 | TEST | QA-Team | 80 Std. |
-| Regressions-Test | 11.09.2024 | 15.09.2024 | TEST | QA-Team | 40 Std. |
-| Performanztest | 16.09.2024 | 18.09.2024 | TEST | QA-Team | 20 Std. |
-| Sicherheitstest | 19.09.2024 | 21.09.2024 | TEST | QA-Team | 20 Std. |
-| Abnahmetest (UAT) | 22.09.2024 | 30.09.2024 | ACC | Endnutzer | 50 Std. |
-| Produktionsfreigabe | 01.10.2024 | 01.10.2024 | PROD | DevOps-Team | 10 Std. |
+| Testplanung | 13.05.2026 | 17.05.2026 | Alle | Testmanager | 20 Std. |
+| Testfalldesign | 18.05.2026 | 27.05.2026 | Alle | QA-Team | 40 Std. |
+| Unittest | 28.05.2026 | 08.06.2026 | DEV | Entwicklerteam | 60 Std. |
+| Integrationstest | 09.06.2026 | 13.06.2026 | TEST | QA-Team | 30 Std. |
+| Systemtest | 14.06.2026 | 23.06.2026 | TEST | QA-Team | 80 Std. |
+| Regressions-Test | 24.06.2026 | 28.06.2026 | TEST | QA-Team | 40 Std. |
+| Performanztest | 29.06.2026 | 01.07.2026 | TEST | QA-Team | 20 Std. |
+| Sicherheitstest | 02.07.2024 | 04.07.2024 | TEST | QA-Team | 20 Std. |
+| Abnahmetest (UAT) | 05.07.2024 | 13.07.2024 | ACC | Endnutzer | 50 Std. |
+| Produktionsfreigabe | 14.07.2024 | 14.07.2024 | PROD | DevOps-Team | 10 Std. |
 
 
 ## 8. Testartefakte (Test-Deliverables)
