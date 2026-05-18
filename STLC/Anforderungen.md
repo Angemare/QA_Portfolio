@@ -1,10 +1,5 @@
 # Anforderungen
 
-Der erste Teil des Projektes ist es, die Anforderungen richtig zu verstehen. ****
-
-1. **Überleg dir Fragen und beantworte sie mithilfe der Webseite.** 
-2. **Schreib eine kurze Zusammenfassung aller Informationen, die du gefunden hast.**
-
 
 ### **Die Applikation:**
 
@@ -19,10 +14,6 @@ Webshop mit folgenden Grundfunktionen:
 - Bestellabschluss: Eingabe von Rechnungs- und Versandinformationen, Auswahl der Zahlungsmethode, Preisberechnung (Gesamtsumme)
 
 ---
-## Bewertungsgrundlage
-
-- Mindestens 3 Fragen pro neuem Feature
-- Fragen müssen für das Verständnis des Testings relevant sein
 
 ## **Neue Funktionen (Features)**
 
@@ -38,16 +29,16 @@ Webshop mit folgenden Grundfunktionen:
 
 1\. Kann die maximale Anzahl an Wörter überschritten werden? (300 Wörter max.)
 
-2\. Ist es möglich Feedback ohne Text abzugeben?
+2\. Ist es möglich Feedback ohne Text abzugeben und umgekehrt nur Text ohne Stern Bewertung?
 
-3\. Wird das aktuelle Datum bei der Abgabe des Feedbacks angegeben ? 
+3\. Wird das aktuelle Datum bei der Abgabe des Feedbacks automatisch vom System abgegeben? 
 
 4\. Wird der Kunde aufgefordert eine Bewertung nach Kauf bzw. Erhalt des Produktes abzugeben?
 
 
 **Detaillierte Anforderungen:**
 
-  - Der Kunde soll nach Erhalt der Ware die Möglichkeit haben, das gekaufte Produkt mit einem 5-Sterne-System zu         bewerten und optional einen Text von max. 300 Wörtern abgeben können. Bei Abgabe der Bewertung wird das aktuelle     Datum angegeben. Der Kunde wird nach Erhalt des Produktes informiert eine Bewertung abgeben zu können.
+  - Der Kunde soll nach Erhalt der Ware die Möglichkeit haben, das gekaufte Produkt mit einem 5-Sterne-System zu bewerten und optional einen Text von max. 300 Wörtern abgeben können. Bei Feedback Abgabe muss der Kunde mindestens einen Stern abgeben. Es ist nicht möglich die Stern Bewertung auszulassen sowie 0 Sterne abzugeben. Bei Abgabe der Bewertung wird das aktuelle Datum automatisch vom System angegeben und entspricht folgendes Format DD-MM-YYYY. Der Kunde wird nach Erhalt des Produktes per E-Mail informiert eine Bewertung abgeben zu können.
 ---
 
 ### **2. Altersverifikation für alkoholische Produkte**
@@ -58,17 +49,16 @@ Webshop mit folgenden Grundfunktionen:
 
 1\. Ist es möglich, das Alter anzupassen? (Profilangaben - Einstellungen z. B.) 
 
-2\. Was passiert, wenn der Kunde ein falsches Datums-Format eingibt? (Anstatt - ein . oder /) (-> Info gewünschtes       Format) (-> Fehlermeldung: Bitte nutze folgendes Format) oder (-> dropdown list Calender - Format) 
+2\. Was passiert, wenn der Kunde ein falsches Datums-Format eingibt? (Anstatt - ein . oder /) (-> Info gewünschtes       Format) (-> Fehlermeldung: Bitte nutze folgendes Format) oder um Fehler zu meinden:  (-> dropdown list Calender - Format) 
 
-3\. Wird die Altersverifikation beim Anklicken alkholischer Produkte ausgeführt? 
+3\. Müssen die alkholischen Produkte ausgeblendet sein?  
 
 4\. Was, wenn man die URL versendet und aufruft (nicht direkt über die Seite öffnet) ? Kann die Person ohne              Altersverifikation Alkohol einkaufen? 
 
 
 **Detaillierte Anforderungen:**
 
-  -  Der Kunde soll nach Auswahl von alkoholischen Getränken eine ALtersverifikation durchführen. Das gewünschte          Format des Datums sollte so hinterlegt sein, dass der Kunde nur Zahlen eingeben muss oder ein Drop Down List         Calender nutzt. Das Datum sollte im Profil anzupassen sein. Beim Aufrufen der URL mit alkholischen Getränken,        wird erneut nach einer Altersverifikation gefragt
-
+  -  Der Kunde soll direkt nach der Registrierung oder dem Login eine Altersverifikation durchführen, hierzu erscheint ein Pop Up Fenster. Das Datums zur Altersverifikation soll mit einem Drop Down List Calender versehen werden. Die Eingabe des Alters wird in jeder Session gespeichert. Beim Schließen und neu Öffnen des Webshops, wird der Kunde gebeten sein Alter neu einzugeben. Beim Aufrufen der URL mit alkholischen Getränken sollte es nicht möglich sein die alkoholischen Produkte zu sehen. Hierzu ist eine Registrierung / Login notwendig mit anschlie0ender Altersverifikation. Kunden unter 18 Jahre können das Menü der alkoholischen Produkte nicht sehen. 
 ---
 
 ### **3. Änderungen bei den Versandkosten**
