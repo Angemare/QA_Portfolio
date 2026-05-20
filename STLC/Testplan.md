@@ -1,52 +1,12 @@
-# 1. Aufgabe: Testplan
-
-## Testobjekt (System unter Test):
+# Testplan für MarketMate - Webshop
 
 **Webshop: https://grocerymate.masterschool.com/**
 
 
----
-
-## Testplan
-
-**Erstelle deinen eigenen Testplan für die neuen Funktionen des Webshops!**
-
-**Der Testplan sollte enthalten:**
-
-1. Analyse des Produkts
-2. Entwurf der Teststrategie
-3. Definition der Testziele
-4. Festlegung der Testkriterien (z. B. Abnahmekriterien, Abbruchkriterien, Fortsetzungskriterien)
-5. Ressourcenplanung
-6. Planung der Testumgebung
-7. Zeitplan und Aufwandsschätzung
-8. Festlegung der Testliefergegenstände (Test-Deliverables)
-
-Nutze deine **Anforderungen** aus den vorherigen Aufgaben als Grundlage für den Testplan.
-
----
-
-## Bewertungskriterien
-
-### Testplan
-
-Der Testplan sollte folgende Informationen enthalten:
-
-1. Zielsetzung (Testziele)
-2. Nutzerbasis (Zielgruppen)
-3. Produktfunktionen
-4. Testumfang (Scope)
-5. Testarten (z. B. funktionale Tests, nicht-funktionale Tests, Regressionstests, Abnahmetests)
-
-
-_____________________________________________________________________________________________________________________
-
-# Testplan für MarketMate - Webshop
-
 ## 1. Produktanalyse
 
 **Zielsetzung:**
-Das Hauptziel des Webshops ist die Erweiterung durch neue Funktionen sowie die Gewährleistung der reibungslosen Funktionalität von einem Bewertungssystem der Produkte, einer Altersverifikation alkoholischer Produkte und einem Gratisversand ab einem Bestellwert von 20 Euro. 
+Das Hauptziel des Webshops ist die Gewährleistung einer schnellen Lieferung für Kunden, die ihren Einkauf online tätigen und frische sowie qualitativ hochwertige Lebensmittel wertschätzen. Der Webshop bietet ebenfalls Artikel für den alltäglichen Gebrauch an. 
 
 **Zielgruppe:**
 Der Webshop richtet sich an Neukunden und bestehende Kunden, die online Lebensmittel und Artikel für den täglichen Gebrauch einkaufen. 
