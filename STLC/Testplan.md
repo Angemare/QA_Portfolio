@@ -6,10 +6,10 @@
 ## 1. Produktanalyse
 
 **Zielsetzung:**
-Das Hauptziel des Webshops ist die Gewährleistung einer schnellen Lieferung für Kunden, die ihren Einkauf online tätigen und frische sowie qualitativ hochwertige Lebensmittel wertschätzen. Der Webshop bietet ebenfalls Artikel für den alltäglichen Gebrauch an. 
+Ein online Lebensmittelgeschäft, der seine Endkunden eine schnelle Lieferung zur Verfügung stellt. Der Webshop verfügt über frische sowie qualitativ hochwertige Lebensmittel und bietet ebenfalls Artikel für den alltäglichen Gebrauch an. 
 
 **Zielgruppe:**
-Der Webshop richtet sich an Neukunden und bestehende Kunden, die online Lebensmittel und Artikel für den täglichen Gebrauch einkaufen. 
+Endkunden, die Lebensmittel und Artikel für den täglichen Gebrauch online einkaufen und beliefert werden. 
 
 
 **Hardware- und Software-Spezifikationen:**
@@ -44,33 +44,38 @@ Der Webshop richtet sich an Neukunden und bestehende Kunden, die online Lebensmi
 **Testumfang:**
 
 - **Im Umfang enthalten:**
-    - Registrierung & Login
-    - Produktsuche / Filter / Kategorien
     - Altersverifikation für alkoholische Produkte 
     - gratis Versandkosten ab einem Bestellwert von 20 Euro
     - 5-Sterne-Bewertungssystem und Bewertung mit Text(max. 300 Wörter)
   
 - **Außerhalb des Umfangs:**
+    - Produktsuche / Filter / Kategorien
+    - Registrierung & Login
     - Zahlung
     - Lieferung
-    
+    - Sicherheitstests
+
 
 **Testarten:**
 
 - Funktionstests
 - Regressionstests
 - Performanztests
-- Sicherheitstests
 - Usability-Tests
+
 
 **Risiken und Probleme:**
 
 - **Entwicklungsverzögerungen**
     - Maßnahme: Pufferzeit einplanen
+    - Maßnahme: sichere Zuordnung von Verantwortlichkeiten 
 - **Fehlende Testdaten**
     - Maßnahme: Erzeugung von Mock-Daten
 - **Ressourcenengpässe**
     - Maßnahme: Ersatzressourcen identifizieren
+- **Kostenerhöhung**
+    - Maßnahme: Zeitplan und Aufwandschätzung einhalten
+    - Maßnahme: Anweisungs- / Zweigüberdeckung
     
 
 **Testlogistik:**
@@ -81,6 +86,7 @@ Der Webshop richtet sich an Neukunden und bestehende Kunden, die online Lebensmi
 - QA Engineer (Usability): Robert Brown
 - Endnutzer für Abnahmetests (UAT): Maria Garcia
 
+
 ## 3. Testziele definieren
 
 **Ziele:**
@@ -90,6 +96,7 @@ Der Webshop richtet sich an Neukunden und bestehende Kunden, die online Lebensmi
 - **Performanz:** System funktioniert unter erwarteter Last
 - **Sicherheit:** Mögliche Schwachstellen erkennen und beheben
 - **Usability:** Plattform ist nutzerfreundlich und barrierefrei
+
 
 **Erwartete Ergebnisse:**
 
@@ -129,7 +136,7 @@ Der Webshop richtet sich an Neukunden und bestehende Kunden, die online Lebensmi
 
 - **Personal:** QA-Team, Entwicklungsteam, Endnutzer für UAT
 - **Hardware:** PCs, Laptops, Tablets, Smartphones
-- **Software:** Browser (Chrome, Firefox, Safari, Edge), Betriebssysteme (Windows, macOS, Android, iOS)
+- **Software:** Browser (Chrome, Firefox, Safari, Edge), Betriebssysteme (Windows, macOS,      Android, iOS)
 - **Infrastruktur:** Testumgebungen, Automatisierungstools, Performanztools
 
 
@@ -137,10 +144,10 @@ Der Webshop richtet sich an Neukunden und bestehende Kunden, die online Lebensmi
 
 - Realgeräte mit echten Betriebssystemen und Browsern
 - Umgebungen:
-  - Entwicklung (DEV)
-  - Test (TEST)
-  - Abnahme (ACC)
-  - Produktion (PROD)
+  - Entwicklung (DEV)     -> 28.05.2026 - 08.06.2026
+  - Test (TEST)           -> 09.06.2026 - 28.06.2026     
+  - Abnahme (ACC)         -> 29.06.2026 - 13.07.2026
+  - Produktion (PROD)     ->              14.07.2026
 
 
 ## 7. Zeitplan und Aufwandsschätzung
@@ -153,8 +160,8 @@ Der Webshop richtet sich an Neukunden und bestehende Kunden, die online Lebensmi
 | Integrationstest | 09.06.2026 | 13.06.2026 | TEST | QA-Team | 30 Std. |
 | Systemtest | 14.06.2026 | 23.06.2026 | TEST | QA-Team | 80 Std. |
 | Regressions-Test | 24.06.2026 | 28.06.2026 | TEST | QA-Team | 40 Std. |
-| Performanztest | 29.06.2026 | 01.07.2026 | TEST | QA-Team | 20 Std. |
-| Sicherheitstest | 02.07.2024 | 04.07.2024 | TEST | QA-Team | 20 Std. |
+| Performanztest | 29.06.2026 | 01.07.2026 | ACC | QA-Team | 20 Std. |
+| Sicherheitstest | 02.07.2024 | 04.07.2024 | ACC | QA-Team | 20 Std. |
 | Abnahmetest (UAT) | 05.07.2024 | 13.07.2024 | ACC | Endnutzer | 50 Std. |
 | Produktionsfreigabe | 14.07.2024 | 14.07.2024 | PROD | DevOps-Team | 10 Std. |
 
