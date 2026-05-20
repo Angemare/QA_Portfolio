@@ -6,7 +6,7 @@
 ## 1. Produktanalyse
 
 **Zielsetzung:**
-Ein online Lebensmittelgeschäft, der seine Endkunden eine schnelle Lieferung zur Verfügung stellt. Der Webshop verfügt über frische sowie qualitativ hochwertige Lebensmittel und bietet ebenfalls Artikel für den alltäglichen Gebrauch an. 
+Ein online Lebensmittelgeschäft, der Endkunden eine schnelle Lieferung zur Verfügung stellt. Der Webshop verfügt über frische sowie qualitativ hochwertige Lebensmittel und bietet ebenfalls Artikel für den alltäglichen Gebrauch an. 
 
 **Zielgruppe:**
 Endkunden, die Lebensmittel und Artikel für den täglichen Gebrauch online einkaufen und beliefert werden. 
