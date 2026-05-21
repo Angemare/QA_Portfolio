@@ -58,7 +58,7 @@ Webshop mit folgenden Grundfunktionen:
 
 **Detaillierte Anforderungen:**
 
-  -  Der Kunde soll direkt nach der Registrierung oder dem Login eine Altersverifikation durchführen, hierzu erscheint ein Pop Up Fenster. Die Eingabe des Alters wird in jeder Session gespeichert. Beim Schließen und neu Öffnen des Webshops, wird der Kunde gebeten sein Alter neu einzugeben. Beim Aufrufen der URL mit alkholischen Getränken soll es nicht möglich sein die alkoholischen Produkte zu sehen. Hierzu ist eine Registrierung / Login notwendig mit anschließender Altersverifikation. Kunden unter 18 Jahre können das Menü der alkoholischen Produkte nicht sehen. 
+  -  Der Kunde soll direkt nach der Registrierung oder dem Login eine Altersverifikation durchführen, hierzu erscheint ein Pop Up Fenster. Die Eingabe des Alters wird in jeder Session gespeichert. Beim Schließen und neu Öffnen des Webshops, wird der Kunde gebeten sein Alter neu einzugeben. Beim Aufrufen der URL mit alkoholischen Getränken soll es nicht möglich sein die alkoholischen Produkte zu sehen. Hierzu ist eine Registrierung / Login notwendig mit anschließender Altersverifikation. Kunden unter 18 Jahre können das Menü der alkoholischen Produkte nicht sehen. 
 ---
 
 ### **3. Änderungen bei den Versandkosten**
