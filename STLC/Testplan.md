@@ -95,6 +95,8 @@ Endkunden, die Lebensmittel und Artikel für den täglichen Gebrauch online eink
 - **Performanz:** System funktioniert unter erwarteter Last
 - **Sicherheit:** Mögliche Schwachstellen erkennen und beheben
 - **Usability:** Plattform ist nutzerfreundlich und barrierefrei
+- **User Experience:** Webshop verfügt über Liefergenauigkeit und Produkt Qualität
+- **Customer Service:** Kundenzufriedenheit überprüfen 
 
 
 **Erwartete Ergebnisse:**
@@ -108,7 +110,9 @@ Endkunden, die Lebensmittel und Artikel für den täglichen Gebrauch online eink
 - Usability ist barrierefrei und nutzerfreundlich
 - Bewertungssystem funktioniert fehlerfrei
 - Versandkosten kostenlos ab einem Bestellwert von 20 Euro 
-- Versandkosten enthalten 5 Euro ab einem Bestellwert unter 20 Euro 
+- Versandkosten enthalten 5 Euro ab einem Bestellwert unter 20 Euro
+
+  
   
 
 ## 4. Testkriterien definieren
