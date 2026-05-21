@@ -47,18 +47,18 @@ Webshop mit folgenden Grundfunktionen:
 
   -  Alkoholische Produkte erfordern eine Altersverifikation. Beim Aufrufen der Kategorie soll ein Fenster                erscheinen, in dem Nutzer ihr Alter angeben müssen (18+), bevor sie Zugriff erhalten.
 
-1\. Ist es möglich, das Alter anzupassen? (Profilangaben - Einstellungen z. B.) 
+1\. Ist es möglich, das Alter anzupassen? 
 
-2\. Was passiert, wenn der Kunde ein falsches Datums-Format eingibt? (Anstatt - ein . oder /) (-> Info gewünschtes       Format) (-> Fehlermeldung: Bitte nutze folgendes Format) oder um Fehler zu meinden:  (-> dropdown list Calender - Format) 
+2\. Was passiert, wenn der Kunde ein falsches Datum oder Datums-Format eingibt? (Anstatt - ein . oder /)
 
 3\. Müssen die alkholischen Produkte ausgeblendet sein?  
 
-4\. Was, wenn man die URL versendet und aufruft (nicht direkt über die Seite öffnet) ? Kann die Person ohne              Altersverifikation Alkohol einkaufen? 
+4\. Was, wenn man die URL von alkoholischen Artikeln aufruft (nicht direkt über die Seite öffnet) ? Kann die Person ohne              Altersverifikation Alkohol einkaufen? 
 
 
 **Detaillierte Anforderungen:**
 
-  -  Der Kunde soll direkt nach der Registrierung oder dem Login eine Altersverifikation durchführen, hierzu erscheint ein Pop Up Fenster. Das Datums zur Altersverifikation soll mit einem Drop Down List Calender versehen werden. Die Eingabe des Alters wird in jeder Session gespeichert. Beim Schließen und neu Öffnen des Webshops, wird der Kunde gebeten sein Alter neu einzugeben. Beim Aufrufen der URL mit alkholischen Getränken sollte es nicht möglich sein die alkoholischen Produkte zu sehen. Hierzu ist eine Registrierung / Login notwendig mit anschlie0ender Altersverifikation. Kunden unter 18 Jahre können das Menü der alkoholischen Produkte nicht sehen. 
+  -  Der Kunde soll direkt nach der Registrierung oder dem Login eine Altersverifikation durchführen, hierzu erscheint ein Pop Up Fenster. Die Eingabe des Alters wird in jeder Session gespeichert. Beim Schließen und neu Öffnen des Webshops, wird der Kunde gebeten sein Alter neu einzugeben. Beim Aufrufen der URL mit alkholischen Getränken soll es nicht möglich sein die alkoholischen Produkte zu sehen. Hierzu ist eine Registrierung / Login notwendig mit anschließender Altersverifikation. Kunden unter 18 Jahre können das Menü der alkoholischen Produkte nicht sehen. 
 ---
 
 ### **3. Änderungen bei den Versandkosten**
