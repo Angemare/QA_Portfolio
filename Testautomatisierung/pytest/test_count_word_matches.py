@@ -21,3 +21,4 @@ def test_count_word_matches(text, target, expected):
     assert count_word_matches(text, target) == expected
 
 
+print("hello patrick")
