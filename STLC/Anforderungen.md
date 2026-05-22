@@ -47,13 +47,13 @@ Webshop mit folgenden Grundfunktionen:
 
   -  Alkoholische Produkte erfordern eine Altersverifikation. Beim Aufrufen der Kategorie soll ein Fenster erscheinen, in dem Nutzer ihr Alter angeben müssen (18+), bevor sie Zugriff erhalten.
 
-1\. Ist es möglich bei falscher Eingabe des Alters, das Alter anzupassen? 
+1\. Was passiert, wenn der Kunde ein falsches Datum oder Datums-Format eingibt? (Anstatt - ein . oder /) Ist es möglich bei falscher Eingabe des Alters, das Alter anzupassen? 
 
-2\. Was passiert, wenn der Kunde ein falsches Datum oder Datums-Format eingibt? (Anstatt - ein . oder /)
+2\. Müssen die alkholischen Produkte ausgeblendet sein?  
 
-3\. Müssen die alkholischen Produkte ausgeblendet sein?  
+3\. Was, wenn man die URL von alkoholischen Artikeln aufruft (nicht direkt über die Seite öffnet) Kann die Person ohne Altersverifikation Alkohol einkaufen? 
 
-4\. Was, wenn man die URL von alkoholischen Artikeln aufruft (nicht direkt über die Seite öffnet) Kann die Person ohne Altersverifikation Alkohol einkaufen? 
+4\. Wie lange ist die Altersverifikation im System gespeichert?
 
 
 **Detaillierte Anforderungen:**
