@@ -1,20 +1,6 @@
-1. Aufgabe: Testfallentwurf
+# Testfallentwurf
 
-## Testobjekt (System unter Test):
-
-**Webshop: https://grocerymate.masterschool.com/**
-
-
----
-
-
-## Testfallentwurf (Test Case Design)
-
-**Entwirf deine Testfälle auf Basis der Funktionen, die für das nächste Release des Online-Grocery-Shops entwickelt werden sollen!**
-
-- Du musst die Testfälle nur **entwerfen** – die Testdurchführung erfolgt in einer späteren Phase.
-- Füge, wenn anwendbar, die verwendete **Testentwurfs-Technik** (z. B. Äquivalenzklassenbildung, Grenzwertanalyse) hinzu.
-
+### **Webshop: https://grocerymate.masterschool.com/**
 
 ---
 
@@ -25,3 +11,110 @@
 - Pro Funktion müssen mindestens **3 Testfälle** entworfen werden.
 - Falls eine **Testentwurfs-Technik** anwendbar ist, muss sie angegeben werden.
 - Außerdem muss ergänzt werden, **welche Testfälle automatisiert** würden – und **warum**.
+
+
+____________________________________________________________________________________________________
+
+### **1. Bewertungssystem für Produkte**
+
+Testfälle: 
+
+1. Grenzwertanalyse
+   - Testfall: Überprüfung der maximalen Texteingabe von 500 Wörter.
+       - Eingabe: Text mit 500 Wörtern
+       - Erwartetes Ergebnis: Text wird erfolgreich gespeichert und ist auf der Bewertungsseite              sichtbar
+    
+2. Grenzwertanalyse
+   - Testfall: Überprüfung der maximalen Texteingabe mit mehr als 500 Wörter.
+       - Eingabe: Text mit 501 Wörtern
+       - Erwartetes Ergebnis: Fehlermeldung: "Text darf maximal 500 Wörter enthalten"
+
+3. Äquivalenzklassenbildung:
+   - Testfall: Überprüfung der maximalen Texteingabe mit weniger als 500 Zeichen
+     - Eingabe: Text mit 250 Wörter
+     - Erwartetes Ergebnis: Text wird gespeichert und ist auf der Bewertungsseite sichtbar
+
+4. Fehlermessen:
+  - Testfall: Überprüfung der Texteingabe ohne Text
+    - Eingabe: Textfeld bleibt leer
+    - Erwartetes Ergebnis: Bewertung wird ohne Texteingabe gespeichert und angezeigt
+
+5. Fehlermessen:
+   - Testfall: Überprüfung der Texteingabe ohne die 5-Sterne-Bewertung
+     - Eingabe: keine 5-Sterne-Bewertung abgeben, nur Textbewertung
+     - Erwartetes Ergebnis: Fehlermeldung: "Bitte gebe eine 5-Sterne-Bewertung ab"
+    
+6. Fehlermessen:
+   - Testfall: Überprüfung der automatischen Angabe des Datums bei der Abgabe einer Bewertung
+     - Eingabe: Bewertung abgeben
+     - Erwartetes Ergebnis: das Datum der Bewertungsabgabe wird angezeigt
+
+
+____________________________________________________________________________________________________
+
+### **2. Altersverifikation für alkoholische Produkte**
+
+Testfälle: 
+
+1. Fehlermessen:
+   - Testfall: Überprüfung der Eingabe des Alters mit falschem Format
+     - Eingabe: DD.MM.YYYY, DD/MM/YYYY oder DDMMYYYY
+     - Erwartetes Ergebnis: Fehlermeldung: "Bitte gebe das Datum mit folgendem Format an DD-MM-YYYY"
+
+2. Grenzwertanalyse:
+   - Testfall: Der Endnutzer ist heute 18 Jahre alt geworden
+     - Eingabe: Datum von heute vor 18 Jahren eingeben
+     - Erwartetes Ergebnis: Der Endnutzer hat Zugriff auf alkoholische Produkte
+
+3. Grenzwertanalyse:
+   - Testfall: Der Endnutzer ist jünger als 18 Jahre alt
+     - Eingabe: Alterseingabe jünger als 18 Jahre alt eingeben
+     - Erwartetes Ergebnis: Fehlermeldung: "Kein Zugriff auf alkoholische Produkte"
+
+4. Anwendungsfalltest:
+  - Testfall: Überprüfung des Aufrufens der URL mit alkholischen Produkten im Browser
+    - Eingabe: Öffnen einer URL mit alkholischen Proudkten im Browser
+    - Erwartetes Ergebnis: Pop-Up Fenster zur Altersverifikation wird angezeigt
+
+5. Anwendungsfalltest:
+  - Testfall: Neue Eingabe des Alters bei falscher Eingabe
+    - Eingabe: falsches Datum eingeben, Schließen und neu Öffnen des Webshops
+    - Erwartetes Ergebnis: Pop-Up Fenster mit Altersverifikation öffnet sich erneut
+
+____________________________________________________________________________________________________
+
+### **3. Änderungen bei den Versandkosten**
+
+Testfälle:
+
+1. Grenzwertanalyse:
+   - Testfall: Überprüfung der Versandkosten bei einem Bestellwert unter 20 Euro.
+     - Eingabe: Bestellwert unter 20 Euro in den Warenkorb legen
+     - Erwartetes Ergebnis: 5 Euro Versandkosten
+
+2. Grenzwertanalyse:
+   - Testfall: Überprüfung der Versandkosten bei einem Bestellwert von genau 20 Euro.
+     -  Eingabe: Bestellwert von 20 Euro in den Warenkorb legen
+     -  Erwartetes Ergebnis: Gratisversand
+
+3. Grenzwertanalyse:
+   - Testfall: Überprüfung der Versandkosten bei einem Bestellwert über 20 Euro.
+     - Eingabe: Bestellwert über 20 Euro in den Warenkorb legen
+     - Erwartetes Ergebnis: Gratisversand
+
+4. Anwendungsfalltest:
+   - Tesfall: Überprüfung, ob sich bei Änderung des Bestellwertes (über 20 Euro) die Versandkosten       im Warenkorb anpassen. 
+     - Eingabe: Entfernen von Artikel aus dem Warenkorb -> Bestellwert unter 20 Euro
+     - Erwartetes Ergebnis: Versandkosten 5 Euro
+
+5. Anwendungsfalltest:
+   - Testfall: Überprüfung der Angabe des Differenzwertes bis zum Gratisversand.
+     - Eingabe: Bestellwert 18 Euro
+     - Erwartetes Ergebnis: Es fehlen noch 2 Euro bis zum Gratisversand
+
+
+____________________________________________________________________________________________________
+
+
+
+
