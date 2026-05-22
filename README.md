@@ -13,7 +13,6 @@ ________________________________________________________________________________
 
 - **Automatisierung:** Python-basierte Tests mit Pytest, Browserautomatisierung mit Selenium und XPath-Lösungen für Web-Datenextraktion.
 
-- **Qualitätssicherung:** Fokus auf reproduzierbare Tests, negative Testfälle, edge case-Tests und klare Ergebnisdokumentation.
 
 _____________________________________________________________________________________________________________________
 
@@ -29,7 +28,7 @@ ________________________________________________________________________________
 
   - `Testfallentwurf (Test Case Design).md`
 
-  - `Testdurchführung & Testberichterstattung`
+  - `Testdurchführung & Testausführungsberichte (test reporting), Fehlerberichte (bug report)`
     
 
 #### - `TestAutomatisation/ - Automatisierung und praktische Testaufgaben`
