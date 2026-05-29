@@ -35,20 +35,24 @@ Testfälle:
      - Erwartetes Ergebnis: Text wird gespeichert und ist auf der Bewertungsseite sichtbar
 
 4. Fehlermessen:
-  - Testfall: Überprüfung der Texteingabe ohne Text
+  - Testfall: Überprüfung des Bewertungssystems ohne Text
     - Eingabe: Textfeld bleibt leer
     - Erwartetes Ergebnis: Bewertung wird ohne Texteingabe gespeichert und angezeigt
 
 5. Fehlermessen:
-   - Testfall: Überprüfung der Texteingabe ohne die 5-Sterne-Bewertung
+   - Testfall: Überprüfung des Bewertungssystems ohne die 5-Sterne-Bewertung
      - Eingabe: keine 5-Sterne-Bewertung abgeben, nur Textbewertung
      - Erwartetes Ergebnis: Fehlermeldung: "Bitte gebe eine 5-Sterne-Bewertung ab"
     
 6. Fehlermessen:
    - Testfall: Überprüfung der automatischen Angabe des Datums bei der Abgabe einer Bewertung
      - Eingabe: Bewertung abgeben
-     - Erwartetes Ergebnis: das Datum der Bewertungsabgabe wird angezeigt
+     - Erwartetes Ergebnis: das Datum am Tag der Bewertungsabgabe wird angezeigt
 
+7. Anwendungsfalltest:
+   - Testfall: Überprüfung der durchschnittlichen Bewertungsanzeige bei Abgabe/Entfernen
+     - Eingabe: Bewertung abgeben/entfernen
+     - Erwartetes Ergebnis: Die durchschnittliche Bewertungszahl passt sich, je nach Abgabe/Entfernen, korrekt an.
 
 ____________________________________________________________________________________________________
 
@@ -57,9 +61,9 @@ ________________________________________________________________________________
 Testfälle: 
 
 1. Fehlermessen:
-   - Testfall: Überprüfung der Eingabe des Alters mit falschem Format
-     - Eingabe: DD.MM.YYYY, DD/MM/YYYY oder DDMMYYYY
-     - Erwartetes Ergebnis: Fehlermeldung: "Bitte gebe das Datum mit folgendem Format an DD-MM-YYYY"
+   - Testfall: Überprüfen, dass alle Formate (DD-MM-YYYY, DD.MM.YYYY, DD/MM/YYYY oder DDMMYYYY) bei der Eingabe des Datums funktionieren
+     - Eingabe: Datum mit folgenden Formaten: DD-MM-YYYY, DD.MM.YYYY, DD/MM/YYYY oder DDMMYYYY
+     - Erwartetes Ergebnis: alle Formate funktionieren | Zugriff zum Webshop
 
 2. Grenzwertanalyse:
    - Testfall: Der Endnutzer ist heute 18 Jahre alt geworden
@@ -73,8 +77,8 @@ Testfälle:
 
 4. Anwendungsfalltest:
   - Testfall: Überprüfung des Aufrufens der URL mit alkholischen Produkten im Browser
-    - Eingabe: Öffnen einer URL mit alkholischen Proudkten im Browser
-    - Erwartetes Ergebnis: Pop-Up Fenster zur Altersverifikation wird angezeigt
+    - Eingabe: Öffnen einer URL mit alkholischen Produkten im Browser
+    - Erwartetes Ergebnis: leeres Bild - keine Vorschau von Alkohol zu sehen
 
 5. Anwendungsfalltest:
   - Testfall: Neue Eingabe des Alters bei falscher Eingabe
@@ -103,7 +107,7 @@ Testfälle:
      - Erwartetes Ergebnis: Gratisversand
 
 4. Anwendungsfalltest:
-   - Tesfall: Überprüfung, ob sich bei Änderung des Bestellwertes (über 20 Euro) die Versandkosten       im Warenkorb anpassen. 
+   - Tesfall: Überprüfung, ob sich bei Änderung des Bestellwertes (über 20 Euro) die Versandkosten im Warenkorb anpassen. 
      - Eingabe: Entfernen von Artikel aus dem Warenkorb -> Bestellwert unter 20 Euro
      - Erwartetes Ergebnis: Versandkosten 5 Euro
 

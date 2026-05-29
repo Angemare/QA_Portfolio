@@ -23,7 +23,7 @@ Webshop mit folgenden Grundfunktionen:
 
 **Ursprünglich vage formulierte Anforderung:**
 
-  - Nutzer sollen Produkte mit einem 5-Sterne-System bewerten und zusätzlich schriftliches Feedback hinterlassen         können.
+  - Nutzer sollen Produkte mit einem 5-Sterne-System bewerten und zusätzlich schriftliches Feedback hinterlassen können.
 
 **Fragen:**
 
@@ -33,12 +33,12 @@ Webshop mit folgenden Grundfunktionen:
 
 3\. Wird das aktuelle Datum bei der Abgabe des Feedbacks automatisch vom System abgegeben? 
 
-4\. Wird der Kunde aufgefordert eine Bewertung nach Kauf bzw. Erhalt des Produktes abzugeben?
+4.\ Passt sich die durchschnittlich angegebene Bewertung nach Abgabe/Entfernen von Bewertungen korrekt an?
 
 
 **Detaillierte Anforderungen:**
 
-  - Der Kunde soll nach Erhalt der Ware die Möglichkeit haben, das gekaufte Produkt mit einem 5-Sterne-System zu bewerten und optional einen Text von max. 500 Wörtern abgeben können. Bei Feedback Abgabe muss der Kunde mindestens einen Stern abgeben. Es ist nicht möglich die Stern Bewertung auszulassen sowie 0 Sterne abzugeben. Bei Abgabe der Bewertung wird das aktuelle Datum automatisch vom System angegeben und entspricht folgendes Format DD-MM-YYYY. Der Kunde wird nach Erhalt des Produktes per E-Mail informiert eine Bewertung abgeben zu können.
+  - Der Kunde soll nach Erhalt der Ware die Möglichkeit haben, das gekaufte Produkt mit einem 5-Sterne-System zu bewerten und optional einen Text von max. 500 Wörtern abgeben können. Bei Feedback Abgabe muss der Kunde mindestens einen Stern abgeben. Es ist nicht möglich die Stern Bewertung auszulassen sowie 0 Sterne abzugeben. Bei Abgabe der Bewertung wird das aktuelle Datum automatisch vom System angegeben und entspricht folgendes Format DD-MM-YYYY. Die durchschnittliche Bewertung passt sich nach Abgabe/Enternung von Bewertungen an.
 ---
 
 ### **2. Altersverifikation für alkoholische Produkte**
@@ -47,18 +47,18 @@ Webshop mit folgenden Grundfunktionen:
 
   -  Alkoholische Produkte erfordern eine Altersverifikation. Beim Aufrufen der Kategorie soll ein Fenster erscheinen, in dem Nutzer ihr Alter angeben müssen (18+), bevor sie Zugriff erhalten.
 
-1\. Was passiert, wenn der Kunde ein falsches Datum oder Datums-Format eingibt? (Anstatt - ein . oder /) Ist es möglich bei falscher Eingabe des Alters, das Alter anzupassen? 
+1\. Funktionieren alle Formate (DD-MM-YYYY, DD.MM.YYYY, DD/MM/YYYY oder DDMMYYYY) bei der Eingabe des Datums? 
 
-2\. Müssen die alkholischen Produkte ausgeblendet sein?  
+2\. Was, wenn man die URL von alkoholischen Artikeln aufruft (nicht direkt über die Seite öffnet) Kann die Person ohne Altersverifikation alkoholische Produkte sehen und einkaufen? 
 
-3\. Was, wenn man die URL von alkoholischen Artikeln aufruft (nicht direkt über die Seite öffnet) Kann die Person ohne Altersverifikation Alkohol einkaufen? 
+3\. Wie lange ist die Altersverifikation im System gespeichert?
 
-4\. Wie lange ist die Altersverifikation im System gespeichert?
+4\. Haben Kunden >= 18 Jahre oder erst > 18 Jahre Zugriff auf alkoholische Produkte?
 
 
 **Detaillierte Anforderungen:**
 
-  - Der Kunde soll direkt nach der Registrierung oder dem Login eine Altersverifikation durchführen, hierzu erscheint ein Pop Up Fenster. Die Eingabe des Alters wird in jeder Session gespeichert. Beim Schließen und neu Öffnen des Webshops, wird der Kunde gebeten sein Alter neu einzugeben. Beim Aufrufen einer URL mit alkoholischen Getränken soll es nicht möglich sein die alkoholischen Produkte zu sehen. Hierzu ist eine Altersverifikation notwendig. Kunden unter 18 Jahre können das Menü der alkoholischen Produkte nicht sehen. 
+  - Der Kunde soll direkt nach der Registrierung oder dem Login eine Altersverifikation durchführen, hierzu erscheint ein Pop Up Fenster. Die Eingabe des Alters wird in jeder Session gespeichert. Beim Schließen und neu Öffnen des Webshops, wird der Kunde gebeten sein Alter neu einzugeben. Beim Aufrufen einer URL mit alkoholischen Getränken soll es nicht möglich sein die alkoholischen Produkte zu sehen. Kunden unter 18 Jahre können das Menü der alkoholischen Produkte nicht sehen. 
 ---
 
 ### **3. Änderungen bei den Versandkosten**
