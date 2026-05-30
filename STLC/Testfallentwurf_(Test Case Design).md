@@ -36,8 +36,8 @@ Testfälle:
 
 4. Fehlermessen:
   - Testfall: Überprüfung des Bewertungssystems ohne Text
-    - Eingabe: Textfeld bleibt leer
-    - Erwartetes Ergebnis: Bewertung wird ohne Texteingabe gespeichert und angezeigt
+    - Eingabe: Textfeld bleibt leer, Sterne Bewertung abgeben
+    - Erwartetes Ergebnis: Sterne Bewertung wird ohne Texteingabe gespeichert und angezeigt
 
 5. Fehlermessen:
    - Testfall: Überprüfung des Bewertungssystems ohne die 5-Sterne-Bewertung
@@ -50,7 +50,7 @@ Testfälle:
      - Erwartetes Ergebnis: das Datum am Tag der Bewertungsabgabe wird angezeigt
 
 7. Anwendungsfalltest:
-   - Testfall: Überprüfung der durchschnittlichen Bewertungsanzeige bei Abgabe/Entfernen
+   - Testfall: Überprüfung der durchschnittlichen Sterne Bewertungen und Anzahl der Bewertungen bei Abgabe/Entfernen
      - Eingabe: Bewertung abgeben/entfernen
      - Erwartetes Ergebnis: Die durchschnittliche Bewertungszahl passt sich, je nach Abgabe/Entfernen, korrekt an.
 

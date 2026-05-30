@@ -33,7 +33,7 @@ Webshop mit folgenden Grundfunktionen:
 
 3\. Wird das aktuelle Datum bei der Abgabe des Feedbacks automatisch vom System abgegeben? 
 
-4.\ Passt sich die durchschnittlich angegebene Bewertung nach Abgabe/Entfernen von Bewertungen korrekt an?
+4.\ Passt sich die durchschnittlich angegebene Sterne Bewertung und Anzahl der Bewertungen nach Abgabe/Entfernen von Bewertungen korrekt an?
 
 
 **Detaillierte Anforderungen:**
