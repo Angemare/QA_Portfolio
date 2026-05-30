@@ -25,12 +25,12 @@ Testfälle:
        - Erwartetes Ergebnis: Text wird erfolgreich gespeichert und ist auf der Bewertungsseite              sichtbar
     
 2. Grenzwertanalyse
-   - Testfall: Überprüfung der maximalen Texteingabe mit mehr als 500 Wörter.
+   - Testfall: Überprüfung der Texteingabe mit mehr als 500 Wörter.
        - Eingabe: Text mit 501 Wörtern
        - Erwartetes Ergebnis: Fehlermeldung: "Text darf maximal 500 Wörter enthalten"
 
 3. Äquivalenzklassenbildung:
-   - Testfall: Überprüfung der maximalen Texteingabe mit weniger als 500 Zeichen
+   - Testfall: Überprüfung der Texteingabe mit weniger als 500 Zeichen
      - Eingabe: Text mit 250 Wörter
      - Erwartetes Ergebnis: Text wird gespeichert und ist auf der Bewertungsseite sichtbar
 

@@ -9,7 +9,7 @@ ________________________________________________________________________________
 ## Projektübersicht
 
 
-- **Testdokumentation & STLC:** Anforderungsanalyse, Testplanung, Testfalldesign, Testdurchführung und Testberichterstattung.
+- **Testdokumentation & STLC:** Anforderungsanalyse, Testplanung, Testfallentwurf, Testdurchführung und Testberichterstattung.
 
 - **Automatisierung:** Python-basierte Tests mit Pytest, Browserautomatisierung mit Selenium und XPath-Lösungen für Web-Datenextraktion.
 
