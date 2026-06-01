@@ -66,13 +66,13 @@ Testfälle:
      - Erwartetes Ergebnis: alle Formate funktionieren | Zugriff zum Webshop für alkoholische Produkte
 
 2. Grenzwertanalyse:
-   - Testfall: Überpfrüfung der Altersverifikation, wenn der Endnutzer heute 18 Jahre alt geworden ist
+   - Testfall: Überprüfung der Altersverifikation, wenn der Endnutzer heute 18 Jahre alt geworden ist
      - Eingabe: Datum von heute vor 18 Jahren eingeben
      - Erwartetes Ergebnis: Der Endnutzer hat Zugriff auf alkoholische Produkte
 
 3. Grenzwertanalyse:
-   - Testfall: Überpfrüfung der Altersverifikation wenn der Endnutzer jünger als 18 Jahre alt ist
-     - Eingabe: Alterseingabe jünger als 18 Jahre alt eingeben
+   - Testfall: Überprüfung der Altersverifikation, wenn der Endnutzer jünger als 18 Jahre alt ist
+     - Eingabe: Alterseingabe einen Tag vor dem 18. Lebensjahr eingeben
      - Erwartetes Ergebnis: Fehlermeldung: "Kein Zugriff auf alkoholische Produkte"
 
 4. Anwendungsfalltest:
