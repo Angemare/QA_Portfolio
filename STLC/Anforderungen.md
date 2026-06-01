@@ -51,14 +51,14 @@ Webshop mit folgenden Grundfunktionen:
 
 2\. Was, wenn man die URL von alkoholischen Artikeln aufruft (nicht direkt über die Seite öffnet) Kann die Person ohne Altersverifikation alkoholische Produkte sehen und einkaufen? 
 
-3\. Wie lange ist die Altersverifikation im System gespeichert?
+3\. Kann man das Alter neu eingeben, bei falscher Eingabe ?
 
 4\. Haben Kunden >= 18 Jahre oder erst > 18 Jahre Zugriff auf alkoholische Produkte?
 
 
 **Detaillierte Anforderungen:**
 
-  - Der Kunde soll direkt nach der Registrierung oder dem Login eine Altersverifikation durchführen, hierzu erscheint ein Pop Up Fenster. Die Eingabe des Alters wird in jeder Session gespeichert. Beim Schließen und neu Öffnen des Webshops, wird der Kunde gebeten sein Alter neu einzugeben. Beim Aufrufen einer URL mit alkoholischen Getränken soll es nicht möglich sein die alkoholischen Produkte zu sehen. Kunden unter 18 Jahre können das Menü der alkoholischen Produkte nicht sehen. 
+  - Der Kunde soll direkt nach der Registrierung oder dem Login eine Altersverifikation durchführen, hierzu erscheint ein Pop Up Fenster. Beim Schließen und neu Öffnen des Webshops, wird der Kunde gebeten sein Alter neu einzugeben. Beim Aufrufen einer URL mit alkoholischen Getränken soll es nicht möglich sein die alkoholischen Produkte zu sehen. Kunden unter 18 Jahre können das Menü der alkoholischen Produkte nicht sehen. 
 ---
 
 ### **3. Änderungen bei den Versandkosten**
