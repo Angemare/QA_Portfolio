@@ -33,7 +33,7 @@ Fokussiere auf leere Eingaben, Leerzeichen und Interpunktion.
 
 #@pytest.fixture
 #def count_word_matches():
-  # return
+  #return
 
 @pytest.mark.parametrize("text, target, expected", [
     ("", "word", 0),
@@ -45,5 +45,5 @@ Fokussiere auf leere Eingaben, Leerzeichen und Interpunktion.
     ("x y z", "x", 1)
  ])
 
-def test_count_word_matches_target(text, target, expected):
+def test_count_word_matches(text, target, expected):
     assert count_word_matches(text, target) == expected
