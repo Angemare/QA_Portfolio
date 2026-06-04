@@ -30,10 +30,19 @@ Fokussiere auf leere Eingaben, Leerzeichen und Interpunktion.
 
 """
 
+# test fixture
+@pytest.fixture
+def text():
+    return ""
 
-#@pytest.fixture
-#def count_word_matches():
-  #return
+@pytest.fixture
+def target():
+    return "word"
+
+def test_fixture(text, target):
+    assert count_word_matches(text, target) == 0
+    assert count_word_matches(text, target) != 1
+
 
 @pytest.mark.parametrize("text, target, expected", [
     ("", "word", 0),
@@ -47,3 +56,62 @@ Fokussiere auf leere Eingaben, Leerzeichen und Interpunktion.
 
 def test_count_word_matches(text, target, expected):
     assert count_word_matches(text, target) == expected
+
+
+""" ### Übung 3: Negativtests (Negative Testing)
+
+Teste die Funktion auf ungültige Eingaben wie `None`, Ganzzahlen oder Listen, um sicherzustellen,
+ dass sie die entsprechenden Ausnahmen (Exceptions) auslöst.
+
+Verwende ein Fixture, um Testfälle für ungültige Eingaben bereitzustellen.
+
+"""
+
+@pytest.fixture
+def invalid_info():
+    return [
+        ("None", "word", 0),
+        ("hello world", "None", 0),
+        (123, "word", AttributeError),
+        ("hello world", 456, AttributeError),
+        (["hello", "world"], "world", AttributeError),
+        ("hello world", ["world"], AttributeError)
+    ]
+
+def test_with_invalid_info():
+    assert count_word_matches("None", "word") == 0
+    assert count_word_matches("hello world", "None") == 0
+    with pytest.raises(AttributeError):
+        count_word_matches(123, "word")
+    with pytest.raises(AttributeError):
+        count_word_matches("hello world", 456)
+    with pytest.raises(AttributeError):
+        count_word_matches(["hello", "world"], "world")
+    with pytest.raises(AttributeError):
+        count_word_matches("hello world", ["world"])
+
+
+
+
+
+
+# testing parametrize (para sa akin lang parang exercise)
+@pytest.mark.parametrize("text, target, expected", [
+    ("None", "word", 0),
+    ("hello world", "None", 0),
+])
+
+
+def test_negative_testing(text, target, expected):
+    assert count_word_matches(text, target) == expected
+
+
+@pytest.mark.parametrize("text, target, exception", [
+    (123, "word", AttributeError),
+    ("hello world", 456, AttributeError),
+    (["hello", "world"], "world", AttributeError),
+    ("hello world", ["world"], AttributeError)
+])
+def test_exception(text, target, exception):
+    with pytest.raises(AttributeError):
+        count_word_matches(text, target)
