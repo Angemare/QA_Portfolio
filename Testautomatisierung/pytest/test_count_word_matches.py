@@ -31,19 +31,31 @@ Fokussiere auf leere Eingaben, Leerzeichen und Interpunktion.
 """
 
 # test fixture
-@pytest.fixture
-def text():
-    return ""
+@pytest.fixture()
+def edge_cases():
+    # return gibt den wert an den test zurück
+    return [
+    ("", "word", 0),
+    ("hello world", "", 0),
+    ("", "", 0),
+    ("hello world", "world", 1),  # zusätzliche leerzeichen ignoriert
+    (" cat ", "cat", 1),
+    ("cat,dog cat", "cat", 1),
+    ("x y z", "x", 1)
+]
 
-@pytest.fixture
-def target():
-    return "word"
+# testfunktion edge_cases
+def test_with_edge_cases():
+    assert count_word_matches("", "word") == 0
+    assert count_word_matches("hello world", "") == 0
+    assert count_word_matches("", "") == 0
+    assert count_word_matches("hello world", "world") == 1
+    assert count_word_matches(" cat ", "cat") == 1
+    assert count_word_matches("cat, dog cat", "cat") == 1
+    assert count_word_matches("x y z", "x") == 1
 
-def test_fixture(text, target):
-    assert count_word_matches(text, target) == 0
-    assert count_word_matches(text, target) != 1
 
-
+# testing with parametrize
 @pytest.mark.parametrize("text, target, expected", [
     ("", "word", 0),
     ("hello world", "", 0),
@@ -69,6 +81,7 @@ Verwende ein Fixture, um Testfälle für ungültige Eingaben bereitzustellen.
 
 @pytest.fixture
 def invalid_info():
+    # return gibt den Wert an den Test zurück
     return [
         ("None", "word", 0),
         ("hello world", "None", 0),
@@ -78,6 +91,7 @@ def invalid_info():
         ("hello world", ["world"], AttributeError)
     ]
 
+# testfunktion mit invalid_info
 def test_with_invalid_info():
     assert count_word_matches("None", "word") == 0
     assert count_word_matches("hello world", "None") == 0
@@ -101,7 +115,7 @@ def test_with_invalid_info():
     ("hello world", "None", 0),
 ])
 
-
+# testfunktion
 def test_negative_testing(text, target, expected):
     assert count_word_matches(text, target) == expected
 
@@ -112,6 +126,8 @@ def test_negative_testing(text, target, expected):
     (["hello", "world"], "world", AttributeError),
     ("hello world", ["world"], AttributeError)
 ])
+
+# testfunktion
 def test_exception(text, target, exception):
     with pytest.raises(AttributeError):
         count_word_matches(text, target)
