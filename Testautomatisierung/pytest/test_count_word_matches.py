@@ -30,7 +30,7 @@ Fokussiere auf leere Eingaben, Leerzeichen und Interpunktion.
 
 """
 
-# test fixture
+# test mit fixture edge case
 @pytest.fixture()
 def edge_cases():
     # return gibt den wert an den test zurück
@@ -44,7 +44,7 @@ def edge_cases():
     ("x y z", "x", 1)
 ]
 
-# testfunktion edge_cases
+# testfunktion edge_cases - fixture test
 def test_with_edge_cases():
     assert count_word_matches("", "word") == 0
     assert count_word_matches("hello world", "") == 0
@@ -55,19 +55,21 @@ def test_with_edge_cases():
     assert count_word_matches("x y z", "x") == 1
 
 
-# testing with parametrize
+# testing edge cases with parametrize
 @pytest.mark.parametrize("text, target, expected", [
     ("", "word", 0),
     ("hello world", "", 0),
     ("", "", 0),
-    ("hello world", "world", 1), # zusätzliche leerzeichen ignoriert
+    ("hello world", "world", 1),  # zusätzliche leerzeichen ignoriert
     (" cat ", "cat", 1),
-    ("cat,dog cat","cat", 1),
+    ("cat,dog cat", "cat", 1),
     ("x y z", "x", 1)
- ])
+])
 
-def test_count_word_matches(text, target, expected):
+# testfunktion mit edge cases und parametrize
+def test_count_matches_edge_cases(text, target, expected):
     assert count_word_matches(text, target) == expected
+
 
 
 """ ### Übung 3: Negativtests (Negative Testing)
@@ -103,8 +105,6 @@ def test_with_invalid_info():
         count_word_matches(["hello", "world"], "world")
     with pytest.raises(AttributeError):
         count_word_matches("hello world", ["world"])
-
-
 
 
 
