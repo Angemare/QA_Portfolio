@@ -48,11 +48,13 @@ def test_website_login_and_product_name(driver, usernames):
     if usernames == "locked_out_user":
         error_message = driver.find_element(By.CSS_SELECTOR, "error").text
         assert "Sorry, this user has been locked out" in error_message
-
     else:
         # test login with successful login usernames
         assert "Swag Labs" in driver.title
 
+
+    # test availability of product_name Sauce Labs Backpack
+    assert product_name == "Sauce Labs Backpack"
 
 
 
