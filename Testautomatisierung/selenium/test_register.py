@@ -50,12 +50,13 @@ def test_registration_automation(driver):
 
     # 5./ check if New User Signup is visible
     new_sign_up_header = driver.find_element(By.XPATH, "//*[@ID='form']/div/div/div[3]/div/h2[text()='New User Signup!']")
-    assert new_sign_up_header.is_displayed(), "New User Signup!"
+    assert new_sign_up_header.is_displayed()
 
     #6./ 7./ fill in username & email & click on signup
-    driver.find_element(By.CSS_SELECTOR, "signup-name").send_keys("Testuser")
-    driver.find_element(By.CSS_SELECTOR, "signup-email").send_keys("testuser000@testing.com")
-    driver.find_element(By.CSS_SELECTOR, "signup-button").click()
+    driver.find_element(By.CSS_SELECTOR, "login-email").send_keys("Testuser")
+    driver.find_element(By.CSS_SELECTOR, "login-password").send_keys("testuser000@testing.com")
+    driver.find_element(By.CSS_SELECTOR, "login-button").click()
 
-
-
+    # 8./ check if ENTER ACCOUNT INFORMATION is visible when registering
+    enter_account_info = driver.find_element(By.XPATH, "//*[@id='form']/div/div/div/div/h2/b[text()='Enter Account Information']")
+    assert enter_account_info.is_displayed()

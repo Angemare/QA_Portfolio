@@ -8,10 +8,11 @@ import pytest
 def driver():
     # instantiate a WebDriver object
     driver = webdriver.Edge()
-    driver.implicitly_wait(20)
+    driver.implicitly_wait(6)
 
     # function will continue due to yield
     yield driver
+
     # end session
     driver.quit()
 
@@ -32,10 +33,10 @@ def test_website_login_and_product_name(driver, usernames):
 
     # find and interact with accepted usernames and password
     driver.find_element(By.ID, "user-name").send_keys(usernames)
-
     driver.find_element(By.ID, "password").send_keys("secret_sauce")
 
-    login_button = (driver.find_element(By.ID, "login-button"))
+    # find and click login button
+    login_button = driver.find_element(By.ID, "login-button")
     login_button.click()
 
 
@@ -45,8 +46,8 @@ def test_website_login_and_product_name(driver, usernames):
 
     #  test login with not successful login usernames
     if usernames == "locked_out_user":
-        error_message = driver.find_element(By.CSS_SELECTOR, "[data-test='error']").text
-        assert "Sorry, this user has been locked out" in error_message
+        error_message = driver.find_element(By.CSS_SELECTOR, "error").text
+        assert "Epic sadface: Sorry, this user has been locked out." in error_message
 
     else:
         # test login with successful login usernames
