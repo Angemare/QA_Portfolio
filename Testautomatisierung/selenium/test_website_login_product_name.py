@@ -40,21 +40,20 @@ def test_website_login_and_product_name(driver, usernames):
     login_button.click()
 
 
-    # find product name by checking its class name
-    product_name = driver.find_element(By.CLASS_NAME, "inventory_item_name").text
-
-
     #  test login with not successful login usernames
     if usernames == "locked_out_user":
-        error_message = driver.find_element(By.CSS_SELECTOR, "error").text
-        assert "Epic sadface: Sorry, this user has been locked out." in error_message
+        error_message = driver.find_element(By.XPATH, "//*[@id='login_button_container']/div/form/div[3]/h3").text
+        assert 'Epic sadface: Sorry, this user has been locked out.' in error_message
 
     else:
+        # find product name by checking its class name
+        product_name = driver.find_element(By.CLASS_NAME, "inventory_item_name").text
+        # test availability of product_name Sauce Labs Backpack
+        assert product_name == "Sauce Labs Backpack"
         # test login with successful login usernames
         assert "Swag Labs" in driver.title
 
-    # test availability of product_name Sauce Labs Backpack
-    assert product_name == "Sauce Labs Backpack"
+
 
 
 
