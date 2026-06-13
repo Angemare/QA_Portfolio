@@ -1,6 +1,5 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By # locating elements on webpage with by
-from _pytest.fixtures import fixture
 import pytest
 from selenium.webdriver.support.select import Select
 

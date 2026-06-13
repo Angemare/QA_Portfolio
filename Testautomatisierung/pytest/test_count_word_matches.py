@@ -22,7 +22,7 @@ def test_count_word_matches(text, target, expected):
     assert count_word_matches(text, target) == expected
 
 
-"""### Übung 2: Testen von Randfällen (Edge Case Testing)
+""" Testen von Randfällen (Edge Case Testing)
 
 Erstelle ein Fixture, das häufige Randfall-Eingaben bereitstellt, und teste die Funktion mit parametrisierten Tests.
 
@@ -72,7 +72,7 @@ def test_count_matches_edge_cases(text, target, expected):
 
 
 
-""" ### Übung 3: Negativtests (Negative Testing)
+""" Negativtests (Negative Testing)
 
 Teste die Funktion auf ungültige Eingaben wie `None`, Ganzzahlen oder Listen, um sicherzustellen,
  dass sie die entsprechenden Ausnahmen (Exceptions) auslöst.
@@ -109,13 +109,13 @@ def test_with_invalid_info():
 
 
 
-# testing parametrize (para sa akin lang parang exercise)
+# testing parametrize
 @pytest.mark.parametrize("text, target, expected", [
     ("None", "word", 0),
     ("hello world", "None", 0),
 ])
 
-# testfunktion
+# testfunction
 def test_negative_testing(text, target, expected):
     assert count_word_matches(text, target) == expected
 
@@ -127,7 +127,7 @@ def test_negative_testing(text, target, expected):
     ("hello world", ["world"], AttributeError)
 ])
 
-# testfunktion
+# testfunction
 def test_exception(text, target, exception):
     with pytest.raises(AttributeError):
         count_word_matches(text, target)
