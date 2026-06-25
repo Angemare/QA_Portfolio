@@ -2,7 +2,7 @@
 - //div[@class='headerIcon']
 
 **2.1 Eingabefeld 'Sign In':**
-- //button[@class='submit-btn']
+- //button[@class='submit-btn' and text()='Sign In']
 - //button[text()='Sign In']
 
 **2.2 Eingabefeld 'Create a new account':**
@@ -26,4 +26,17 @@
 **3.4 Button Sign up**
 - //button[text()='Sign Up']
 
+**4.1 Confirm Schaltfläche:**
+- //div[@class='modal-content']//button[text()='Confirm']
+- //p[text()='Oranges']//button[text()='Add to Cart']
+
+**4.2 Mengeneingabefeld für Orangen**
+- //p[text()='Oranges']//input[@type='number' and @value='1']
+
+**4.3 Add to cart Schaltfläche für Oranges:**
+- img[contains(@alt,'Oranges')]//button[text()='Add to Cart']
+
+**4.4 Add to wish list Schaltfläche für Oranges:**
+- //p[text()='Oranges']//button[text()='🤍'] #black heart actually 
+- //p[text()='Oranges']//button[@class='btn btn-outline-dark']
 
