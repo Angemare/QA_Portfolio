@@ -29,13 +29,13 @@
 - //div[@class='team']//li[1]
 
 **11. Auswahl Beschreibung des 2. Service Elements:**
-- //div[@class='service-item'][2]
+- //div[@class='service-item']/p[2]
 
 **12. Überschrift der Sektion "Contact Us"(h2 Element):**
 - //h2[text()='Contact Us']
 
 **13. alle Links innerhalb des Dropdowns unter "Services":**
-- //a[@href='#services']//ul[@class='dropdown']//li
+- //a[@href='#services']//ul[@class='dropdown']/li
 
 **14. 1. li im Abschnitt "Our Team":**
 - //h3[text()='Our Team']//li[1]
