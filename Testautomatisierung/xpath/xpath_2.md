@@ -1,5 +1,10 @@
+**Gehe zu https://grocerymate.masterschool.com**
+
 **1. Profile Icon**
 - //div[@class='headerIcon']
+
+
+**Öffne nun https://grocerymate.masterschool.com/auth.**
 
 **2.1 Eingabefeld 'Sign In':**
 - //button[@class='submit-btn' and text()='Sign In']
@@ -25,6 +30,9 @@
 
 **3.4 Button Sign up**
 - //button[text()='Sign Up']
+
+
+**Gehe zu https://grocerymate.masterschool.com/store, dann wirst du die folgende Benutzeroberfläche sehen:**
 
 **4.1 Confirm Schaltfläche:**
 - //div[@class='modal-content']//button[text()='Confirm']
