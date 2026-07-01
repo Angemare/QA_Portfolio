@@ -30,21 +30,21 @@
 - //form[@class='form']//input[@type='password']
 
 **3.4 Button Sign up**
-- //button[text()='Sign Up']
+- //button[text()='Sign In']
 
 
 **Gehe zu https://grocerymate.masterschool.com/store, dann wirst du die folgende Benutzeroberfläche sehen:**
 
 **4.1 Confirm Schaltfläche:**
 - //div[@class='modal-content']//button[text()='Confirm']
-- //p[text()='Oranges']//button[text()='Add to Cart']
-- //p[text()='Oranges']/ancestor::div[@class='card']//button[text()='Add to Cart']
+
 
 **4.2 Mengeneingabefeld für Orangen**
 - //p[text()='Oranges']//input[@type='number' and @value='1']
 
 **4.3 Add to cart Schaltfläche für Oranges:**
-- img[contains(@alt,'Oranges')]//button[text()='Add to Cart']
+- //img[contains(@alt,'Oranges')]/ ancestor::div[@class='card']//button[text()='Add to Cart']
+- //p[text()='Oranges']/ancestor::div[@class='card']//button[text()='Add to Cart']
 
 **4.4 Add to wish list Schaltfläche für Oranges:**
 - //p[text()='Oranges']//button[text()='🤍'] #black heart actually 
