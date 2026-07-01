@@ -1,5 +1,7 @@
 from selenium.webdriver.common.by import By
 
+from POM.main.HomePage import HomePage
+
 
 def test_ratingsystem(driver):
     # login
@@ -13,8 +15,10 @@ def test_ratingsystem(driver):
     signin_button.click()
 
     # navigate to shop page
-    shop_link = driver.find_element(By.XPATH, "(//a[@href='/store'])[1]")
-    shop_link.click()
+    homepage = HomePage(driver)
+    homepage.click_shop_btn()
+    #shop_link = driver.find_element(By.XPATH, "(//a[@href='/store'])[1]")
+    #shop_link.click()
 
     # age verification
     birthdate_input = driver.find_element(By.XPATH, "//*[@id='root']/div/div[3]/div[2]/div/div[2]/div/input")
@@ -75,7 +79,10 @@ def test_ratingsystem(driver):
     send_review_button = driver.find_element(By.XPATH, "//button[@class= 'new-review-btn new-review-btn-send']")
     send_review_button.click()
 
-    
+    #check if review with text limited is visible
+    #check if test review without stars is displayed
+    #check if test average review is displayed
+    #check if test review without text is displayed
 
 # def test_limited_characters == 500 characters, > 500 characters, < 500 characters
 # def test_review_without_stars
