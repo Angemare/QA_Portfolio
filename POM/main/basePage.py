@@ -1,6 +1,8 @@
 
 
 class basePage:
+
+
     def __init__(self, driver):
         self.driver = driver
 
@@ -8,3 +10,4 @@ class basePage:
     def click(self, locator):
         element = self.driver.find_element(*locator) # element finden
         element.click() # element anklicken
+

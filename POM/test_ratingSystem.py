@@ -1,35 +1,31 @@
 from selenium.webdriver.common.by import By
+from main.HomePage import HomePage
+from main.LoginPage import LoginPage
+from main.shopPage import shopPage
 
-from POM.main.HomePage import HomePage
 
+def test_rating_system_limited_characters(driver):
+    # arrange login
+    login_page = LoginPage(driver)
+    login_page.enter_username("a.stragies@gmx.de")
+    login_page.enter_password("lalalalala")
 
-def test_ratingsystem(driver):
-    # login
-    username_login_input = driver.find_element(By.XPATH, "//form[@class='form']//input[@type='email']")
-    username_login_input.send_keys("a.stragies@gmx.de")
+    # execute login
+    login_page.click_signin_btn()
 
-    password_login_input = driver.find_element(By.XPATH, "//form[@class='form']//input[@type='password']")
-    password_login_input.send_keys("lalalalala")
-
-    signin_button = driver.find_element(By.XPATH, "//button[text()='Sign In']")
-    signin_button.click()
+    assert driver.current_url == 'https://grocerymate.masterschool.com/auth'
 
     # navigate to shop page
     homepage = HomePage(driver)
     homepage.click_shop_btn()
-    #shop_link = driver.find_element(By.XPATH, "(//a[@href='/store'])[1]")
-    #shop_link.click()
+
 
     # age verification
-    birthdate_input = driver.find_element(By.XPATH, "//*[@id='root']/div/div[3]/div[2]/div/div[2]/div/input")
-    birthdate_input.send_keys("22-05-1988")
+    shoppe = shopPage(driver)
+    shoppe.enter_age("22-05-1988")
+    shoppe.click_confirm_Age()
+    shoppe.click_oranges_to_cart()
 
-    confirm_birthdate_button = driver.find_element(By.XPATH, "//*[@id='root']/div/div[3]/div[2]/div/div[2]/div/button")
-    confirm_birthdate_button.click()
-
-    # add orange to cart
-    orange_add_to_cart_button = driver.find_element(By.XPATH, "//p[text()='Oranges']/ancestor::div[@class='card']//button[text()='Add to Cart']")
-    orange_add_to_cart_button.click()
 
     # click on shopping cart
     shoppingcart_link = driver.find_element(By.XPATH, "//div[@class='headerIcon'][3]")

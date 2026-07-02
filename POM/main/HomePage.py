@@ -1,10 +1,10 @@
-from basepage import BasePage
 from selenium.webdriver.common.by import By
+from main.basePage import basePage
 
 
-class HomePage(BasePage):
-
-    SHOP_BUTTON = (By.XPATH, "//a[@href='/store'])[1]")
+class HomePage(basePage):
+    # locators as tuples
+    SHOP_BUTTON = (By.XPATH, "//a[@href='/store']")
 
 
     def click_shop_btn(self):
