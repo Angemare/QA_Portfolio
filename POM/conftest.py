@@ -8,7 +8,6 @@ def driver():
     driver.implicitly_wait(30)
     driver.get("https://grocerymate.masterschool.com/auth")
 
-
     yield driver
 
     driver.quit()
