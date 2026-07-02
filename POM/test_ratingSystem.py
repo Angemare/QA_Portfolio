@@ -13,7 +13,7 @@ def test_rating_system_limited_characters(driver):
     # execute login
     login_page.click_signin_btn()
 
-    assert driver.current_url == 'https://grocerymate.masterschool.com/auth'
+    assert driver.current_url == "https://grocerymate.masterschool.com/auth"
 
     # navigate to shop page
     homepage = HomePage(driver)
@@ -26,6 +26,7 @@ def test_rating_system_limited_characters(driver):
     shoppe.click_confirm_Age()
     shoppe.click_oranges_to_cart()
 
+    assert driver.current_url == "https://grocerymate.masterschool.com/store"
 
     # click on shopping cart
     shoppingcart_link = driver.find_element(By.XPATH, "//div[@class='headerIcon'][3]")
@@ -70,10 +71,22 @@ def test_rating_system_limited_characters(driver):
     star_review_input.click()
 
     text_review = driver.find_element(By.XPATH, "//textarea[@class='new-review-form-control ']")
-    text_review.send_keys("A")
+    text_review.send_keys("AAAAA")
 
     send_review_button = driver.find_element(By.XPATH, "//button[@class= 'new-review-btn new-review-btn-send']")
     send_review_button.click()
+
+    # check if review is visible
+    review_visibility = driver.find_element(By.XPATH, "//*[@id='root']/div/section/section/div/div[1]/div/p")
+    assert review_visibility.is_displayed()
+    #try:
+        #assert review_visibility == "AAAAA"
+    #except AssertionError:
+        #print('Your text review is not visible due to a bug')
+
+
+
+
 
     #check if review with text limited is visible
     #check if test review without stars is displayed
