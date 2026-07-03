@@ -35,7 +35,6 @@
 **4.1 Confirm Schaltfläche:**
 - //div[@class='modal-content']//button[text()='Confirm']
 
-
 **4.2 Mengeneingabefeld für Orangen**
 - //p[text()='Oranges']/ancestor::div[@class='card']//input
 

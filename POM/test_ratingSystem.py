@@ -4,7 +4,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from main.HomePage import HomePage
-from main.LoginPage import LoginPage
 from main.shopPage import shopPage
 
 

@@ -4,16 +4,8 @@ from main.LoginPage import LoginPage
 from main.shopPage import shopPage
 
 
-def test_age_verfication_format(driver):
-    # arrange login
-    login_page = LoginPage(driver)
-    login_page.enter_username("a.stragies@gmx.de")
-    login_page.enter_password("lalalalala")
-
-    # execute login
-    login_page.click_signin_btn()
-
-    assert driver.current_url == "https://grocerymate.masterschool.com/auth"
+def test_age_verification_format(logged_in_driver):
+    driver = logged_in_driver
 
     # navigate to shop page
     homepage = HomePage(driver)
