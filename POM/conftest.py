@@ -1,7 +1,11 @@
+import time
+
 import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from main.HomePage import HomePage
 from main.LoginPage import LoginPage
+from main.shopPage import shopPage
 
 
 @pytest.fixture
@@ -32,3 +36,14 @@ def review_driver(logged_in_driver):
     delete_review.click()
     alert = logged_in_driver.switch_to.alert
     alert.accept()
+
+@pytest.fixture
+def navigate_to_shop_veri_age_add_oranges_to_cart_driver(logged_in_driver):
+    homepage = HomePage(logged_in_driver)
+    homepage.click_shop_btn()
+    shoppe = shopPage(logged_in_driver)
+    shoppe.enter_age("22-05-1988")
+    shoppe.click_confirm_Age()
+    time.sleep(3)
+    shoppe.click_oranges_to_cart()
+    return logged_in_driver
