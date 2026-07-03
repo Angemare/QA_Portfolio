@@ -12,3 +12,5 @@ def test_login_valid(driver):
     login_page.click_signin_btn()
 
     assert driver.current_url == "https://grocerymate.masterschool.com/auth"
+
+    # oder assert logout link is displayed

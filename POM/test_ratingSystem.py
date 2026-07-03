@@ -1,3 +1,4 @@
+import time
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -7,17 +8,8 @@ from main.LoginPage import LoginPage
 from main.shopPage import shopPage
 
 
-def test_rating_system_limited_characters(driver):
-    # arrange login
-    login_page = LoginPage(driver)
-    login_page.enter_username("a.stragies@gmx.de")
-    login_page.enter_password("lalalalala")
-
-    # execute login
-    login_page.click_signin_btn()
-
-    assert driver.current_url == "https://grocerymate.masterschool.com/auth"
-
+def test_rating_system_limited_characters(review_driver):
+    driver = review_driver
     # navigate to shop page
     homepage = HomePage(driver)
     homepage.click_shop_btn()
@@ -27,6 +19,7 @@ def test_rating_system_limited_characters(driver):
     shoppe = shopPage(driver)
     shoppe.enter_age("22-05-1988")
     shoppe.click_confirm_Age()
+    time.sleep(10)
     shoppe.click_oranges_to_cart()
 
     assert driver.current_url == "https://grocerymate.masterschool.com/store"
@@ -81,16 +74,17 @@ def test_rating_system_limited_characters(driver):
     send_review_button.click()
 
     # check if review is visible
-    review_visibility = driver.find_element(By.XPATH, "//*[@id='root']/div/section/section/div/div[1]/div/p")
-    #assert review_visibility.is_displayed()
-    try:
-        assert review_visibility == "AAAAA"
-    except AssertionError:
-        print('Your text review is not visible due to a bug')
+    text_review = driver.find_element(By.XPATH, "//*[@id='root']/div/section/section/div/div[1]/div/p")
+    assert text_review.is_displayed()
+    assert text_review == "AAAAA"
 
 
 
 
+
+    # pytest.mark.parametrize("Eigenschaften", [
+    #   (data to test)
+    #])
 
     #check if review with text limited is visible
     #check if test review without stars is displayed
