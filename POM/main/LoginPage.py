@@ -7,6 +7,7 @@ class LoginPage(basePage):
     USERNAME_LOGIN_INPUT = (By.XPATH, "//form[@class='form']//input[@type='email']")
     PASSWORD_LOGIN_INPUT = (By.XPATH, "//form[@class='form']//input[@type='password']")
     SIGNIN_BUTTON = (By.XPATH, "//button[text()='Sign In']")
+    LOGIN = (By.XPATH, "")
 
     def enter_username(self, username):
         username_input = self.driver.find_element(*self.USERNAME_LOGIN_INPUT)
@@ -18,5 +19,7 @@ class LoginPage(basePage):
 
     def click_signin_btn(self):
         self.click(self.SIGNIN_BUTTON)
+
+
 
 

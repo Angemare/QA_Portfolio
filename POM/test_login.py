@@ -1,16 +1,13 @@
+import password
+import username
+
+from conftest import logged_in_driver
 from main.LoginPage import LoginPage
 
 
-def test_login_valid(driver):
-
-# arrange login
-    login_page = LoginPage(driver)
-    login_page.enter_username("a.stragies@gmx.de")
-    login_page.enter_password("lalalalala")
-
-    # execute login
-    login_page.click_signin_btn()
+def test_login_valid(logged_in_driver):
+    # arrange login
+    driver = logged_in_driver
 
     assert driver.current_url == "https://grocerymate.masterschool.com/auth"
 
-    # oder assert logout link is displayed

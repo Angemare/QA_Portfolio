@@ -6,7 +6,10 @@ class shopPage(basePage):
     # locators as tuples
     AGE_INPUT = (By.XPATH, "//*[@id='root']/div/div[3]/div[2]/div/div[2]/div/input")
     AGE_INPUT_CONFIRM_BUTTON = (By.XPATH, "//*[@id='root']/div/div[3]/div[2]/div/div[2]/div/button")
-    ADD_TO_CART_ORANGES_BUTTON = (By.XPATH, "//p[text()='Oranges']/ancestor::div[@class='card']//button[text()='Add to Cart']")
+    ADD_TO_CART_GALA_APPLES_BUTTON = (By.XPATH, "//p[text()='Gala Apples']/ancestor::div[@class='card']//button[text()='Add to Cart']")
+    SHOPPING_CART_ICON = (By.XPATH, "//div[@class='headerIcon'][3]")
+    NAVIGATE_BOUGHT_GALA_APPLES_IMAGE = (By.XPATH, "//p[text()='Gala Apples']")
+
 
     def enter_age(self, age):
         age_verification_input = self.driver.find_element(*self.AGE_INPUT)
@@ -15,5 +18,14 @@ class shopPage(basePage):
     def click_confirm_Age(self):
         self.click(self.AGE_INPUT_CONFIRM_BUTTON)
 
-    def click_oranges_to_cart(self):
-        self.click(self.ADD_TO_CART_ORANGES_BUTTON)
+    def click_gala_apples_to_cart(self):
+        self.click(self.ADD_TO_CART_GALA_APPLES_BUTTON)
+
+    def click_shopping_cart_icon(self):
+        self.click(self.SHOPPING_CART_ICON)
+
+    def click_gala_apples_to_make_review(self):
+        self.click(self.NAVIGATE_BOUGHT_GALA_APPLES_IMAGE)
+
+
+

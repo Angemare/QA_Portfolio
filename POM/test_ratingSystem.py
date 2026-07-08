@@ -1,7 +1,5 @@
 import time
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+from main.reviewPage import reviewPage
 from main.shoppingCartPage import shoppingCartPage
 from main.HomePage import HomePage
 from main.shopPage import shopPage
@@ -50,28 +48,23 @@ def test_rating_system_limited_characters(review_driver):
     shopcartpage.click_buy_now()
 
     # navigate to shop page
-    shop_link = driver.find_element(By.XPATH, "(//a[@href='/store'])[1]")
-    shop_link.click()
+    homepage.click_shop_btn()
 
-    # click on bought product - gala apples
-    gala_apples_review_click = driver.find_element(By.XPATH, "//p[text()='Gala Apples']")
-    gala_apples_review_click.click()
+    # click on bought product to make a review - gala apples
+    shoppe.click_gala_apples_to_make_review()
 
     # add your star review
-    star_review_input = driver.find_element(By.XPATH, "//*[@id='root']/div/section/section[1]/div[2]/div/div/div/div/div[1]/div/span[5]")
-    star_review_input.click()
+    reviewpage = reviewPage(driver)
 
-    text_review_input = driver.find_element(By.XPATH, "//textarea[@class='new-review-form-control ']")
-    text_review_input.send_keys("AAAAA")
-
-    send_review_button = WebDriverWait(driver, 10).until(
-            EC.element_to_be_clickable((By.XPATH, "//button[@class= 'new-review-btn new-review-btn-send']")))
-    send_review_button.click()
+    text_review = "TEST REVIEW"
+    reviewpage.enter_star_review()
+    reviewpage.enter_text_review(text_review)
+    reviewpage.send_review()
+    time.sleep(10)
+    reviewpage.check_text_review()
 
     # check if review is visible
-    text_review = driver.find_element(By.XPATH, "//*[@id='root']/div/section/section/div/div[1]/div")
-    assert text_review.is_displayed()
-    assert text_review == "AAAAA"
+    assert reviewpage.check_text_review == "TEST REVIEW"
 
 
 
