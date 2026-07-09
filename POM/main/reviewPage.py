@@ -11,7 +11,7 @@ class reviewPage(basePage):
     SENT_TEXT_REVIEW = (By.XPATH, "//*[@id='root']/div/section/section/div/div[1]/div")
     CLICK_MEATBALLS_MENU_BUTTON = (By.XPATH, "//div[@class='menu-icon']")
     DELETE_REVIEW_BUTTON = (By.XPATH, "//button[text()='Delete']")
-
+    MAX_500_CHAR_TEXT_REVIEW_ERROR_MESSAGE = (By.XPATH, "//p[@class='error-message' and text()='You cannot tell us more about this product.']")
 
     # add your review and click send
     def enter_star_review(self):
@@ -26,7 +26,7 @@ class reviewPage(basePage):
 
     # check if review is visible
     def check_text_review(self):
-        self.find_element (self.SENT_TEXT_REVIEW)
+        self.find_element(self.SENT_TEXT_REVIEW)
 
     # review löschen mit selenium locator finden
     def click_meatballs_menu(self):
@@ -35,3 +35,5 @@ class reviewPage(basePage):
     def delete_review(self):
         self.click(self.DELETE_REVIEW_BUTTON)
 
+    def error_message_appears(self):
+        self.find_element(self.MAX_500_CHAR_TEXT_REVIEW_ERROR_MESSAGE)
