@@ -30,7 +30,7 @@ def logged_in_driver(driver):
 @pytest.fixture
 def review_driver(logged_in_driver):
     yield logged_in_driver
-    # review löschen mit selenium locator finden
+    # delete review
     reviewpage = reviewPage(logged_in_driver)
     reviewpage.click_meatballs_menu()
     reviewpage.delete_review()

@@ -15,7 +15,7 @@ class shoppingCartPage(basePage):
     BUY_NOW_BUTTON = (By.XPATH, "//form[@class='payment-form']//button[text()='Buy now']")
 
 
-    # enter shipment address details and click buy now button
+    # enter shipment address details
     def enter_street(self, street):
         street_input = self.driver.find_element(*self.SHIPMENT_STREET_INPUT)
         street_input.send_keys(street)
@@ -28,7 +28,7 @@ class shoppingCartPage(basePage):
         postalcode_input = self.driver.find_element(*self.SHIPMENT_POSTALCODE_INPUT)
         postalcode_input.send_keys(postalcode)
 
-    # enter payment details
+    # enter payment details and click buy now button
     def enter_card_number(self, cardnumber):
         cardnumber_input = self.driver.find_element(*self.PAYMENT_CARDNUMBER_INPUT)
         cardnumber_input.send_keys(cardnumber)

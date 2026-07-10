@@ -1,3 +1,4 @@
+from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -12,8 +13,19 @@ class basePage:
         element = self.driver.find_element(*locator) # element finden
         element.click() # element anklicken
 
+    def getText(self, locator):
+        element = self.driver.find_element(*locator) # element finden
+        return element.text
+
+    def getDropdown(self, locator):
+        element = self.driver.find_element(*locator)
+        return Select(element)
+
     def find_element(self, locator):
         """ Find a single element using Explicit Wait """
         return WebDriverWait(self.driver, self.timeout).until(
-            EC.presence_of_element_located(locator)
-        )
+            EC.presence_of_element_located(locator))
+
+    def click_element(self, locator):
+        return WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable(locator))
