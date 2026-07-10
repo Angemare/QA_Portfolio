@@ -9,6 +9,8 @@ class shopPage(basePage):
     ADD_TO_CART_GALA_APPLES_BUTTON = (By.XPATH, "//p[text()='Gala Apples']/ancestor::div[@class='card']//button[text()='Add to Cart']")
     SHOPPING_CART_ICON = (By.XPATH, "//div[@class='headerIcon'][3]")
     NAVIGATE_BOUGHT_GALA_APPLES_IMAGE = (By.XPATH, "//p[text()='Gala Apples']")
+    CATEGORY_ALOCOHOL_MENU_LINK = (By.XPATH, "//a[@href='#' and text()='Alocohol']")
+    ALOCOHOL_PRODUCT_TITLE = (By.XPATH, "//p[@class='lead' and text()='Perlenbacher Pilsner Lager']")
 
 
     def enter_age(self, age):
@@ -27,5 +29,9 @@ class shopPage(basePage):
     def click_gala_apples_to_make_review(self):
         self.click(self.NAVIGATE_BOUGHT_GALA_APPLES_IMAGE)
 
+        # open alcohol menu
+    def click_alcohol_menu(self):
+        self.click(self.CATEGORY_ALOCOHOL_MENU_LINK)
 
-
+    def find_alocohol_product(self):
+        self.find_element(self.ALOCOHOL_PRODUCT_TITLE)

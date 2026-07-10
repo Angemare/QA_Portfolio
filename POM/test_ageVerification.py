@@ -9,8 +9,6 @@ from main.shopPage import shopPage
 
 
 
-
-
 def test_age_verification_format(logged_in_driver):
     driver = logged_in_driver
 
@@ -25,7 +23,20 @@ def test_age_verification_format(logged_in_driver):
     shoppe.click_confirm_Age()
     time.sleep(5)
 
-    assert driver.current_url == "https://grocerymate.masterschool.com/store"
+    # open alcohol menu
+    shoppe.click_alcohol_menu()
+    shoppe.find_alocohol_product()
+    time.sleep(5)
+
+    find_title_perlenbacher_pilsner_lager = WebDriverWait(driver, 10).until(
+        EC.visibility_of_element_located((By.XPATH, "//p[@class='lead' and text()='Perlenbacher Pilsner Lager']"))
+    )
+    assert find_title_perlenbacher_pilsner_lager.is_displayed()
+
+
+
+
+
 
 #@pytest.mark.parametrize("date_format, expected", [
     #("22-05-1988", "access to alcohol")
@@ -44,6 +55,11 @@ def test_age_verification_format_no_access(date_format, expected):
         test_age_verification_format(date_format)
 
 
+
+
+    # wrong date format
+    # navigate to menu of alcohol to check access
+
     #category_alcohol = driver.find_element(By.XPATH, "//a[@href='#' and text()='Alocohol']")
     #category_alcohol.click()
 
@@ -51,6 +67,7 @@ def test_age_verification_format_no_access(date_format, expected):
     #assert no_access_to_alcohol.is_displayed()
 
 
+    # age veri date format - ok
     # customers 18. birthday is today
     # customer is younger than 18
     # new age verification after wrong input

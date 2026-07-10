@@ -15,7 +15,9 @@ def test_delivery_costs_threshold(logged_in_driver):
 
     # age verification
     shoppe = shopPage(driver)
-    shoppe.enter_age("22-05-1988")
+
+    age = "22-05-1988"
+    shoppe.enter_age(age)
     shoppe.click_confirm_Age()
     time.sleep(10)
 
@@ -25,8 +27,16 @@ def test_delivery_costs_threshold(logged_in_driver):
     # click on shopping cart
     shoppe.click_shopping_cart_icon()
 
-    assert driver.current_url == "https://grocerymate.masterschool.com/checkout"
+    #assert driver.current_url == "https://grocerymate.masterschool.com/checkout"
 
-    # test delivery costs visible for amount >= 20 euro
+    shipment_not_free = driver.find_element(By.XPATH, "//h5[@class='fw-bold mb-0' and text()='5']")
+    assert shipment_not_free.is_displayed()
+    # empty shopping cart -.-
+
+    # test delivery costs visible for amount >= und < 20 euro:
     # wenn product total >= 20 -> assert shipment == 0.00
     # wenn product total < 20 -> assert shipment == 5.00
+
+    # check update of delivery costs on shoppingcart site after changing order
+    # does info appear of difference value to reach free delivery
+
