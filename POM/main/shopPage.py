@@ -19,14 +19,9 @@ class shopPage(basePage):
         WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located(self.AGE_INPUT)).send_keys(age)
 
-        #age_verification_input = self.driver.find_element(*self.AGE_INPUT)
-        #age_verification_input.send_keys(age)
-
     def click_confirm_Age(self):
         WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable(self.AGE_INPUT_CONFIRM_BUTTON)).click()
-
-        #self.click(self.AGE_INPUT_CONFIRM_BUTTON)
 
     def click_gala_apples_to_cart(self):
         self.click(self.ADD_TO_CART_GALA_APPLES_BUTTON)

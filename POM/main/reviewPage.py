@@ -16,7 +16,7 @@ class reviewPage(basePage):
     CLICK_MEATBALLS_MENU_BUTTON = (By.XPATH, "//div[@class='menu-icon']")
     DELETE_REVIEW_BUTTON = (By.XPATH, "//div[@class='dropdown-menu']//button[text()='Delete']")
     AVERAGE_REVIEW_GALA_APPLES = (By.XPATH, "//p[@class='reviews']")
-
+    REVIEW_NOT_ABLE_TO_SEND_ERROR_POPUP = (By.XPATH, "//*[@id='root']/div/section/section[1]/div[1]/div/div/div[2]")
 
     # add your review and click send
     def enter_star_review(self):
@@ -52,8 +52,7 @@ class reviewPage(basePage):
 
     def dynamic_error_message(self):
         return WebDriverWait(self.driver, 10).until(
-            EC.visibility_of_element_located((By.XPATH, "//*[@id='root']/div/section/section[1]/div[1]/div/div/div[2]"))
-        ) # locator hinzufügen
+            EC.visibility_of_element_located(self.REVIEW_NOT_ABLE_TO_SEND_ERROR_POPUP))
 
     def average_review_gala_apples(self):
         return WebDriverWait(self.driver, 10).until(
