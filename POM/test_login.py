@@ -1,5 +1,4 @@
 from conftest import logged_in_driver
-from main.LoginPage import LoginPage
 
 
 def test_login_valid(logged_in_driver):
