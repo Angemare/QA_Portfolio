@@ -47,11 +47,11 @@ class reviewPage(basePage):
 
     def error_message_appears(self):
         return WebDriverWait(self.driver, 10).until(
-            EC.visibility_of_element_located(self.MAX_500_CHAR_TEXT_REVIEW_ERROR_MESSAGE))
+            EC.visibility_of_element_located(self.MAX_500_CHAR_TEXT_REVIEW_ERROR_MESSAGE)).is_displayed()
         return self.find_element(self.MAX_500_CHAR_TEXT_REVIEW_ERROR_MESSAGE).is_displayed()
 
     def dynamic_error_message(self):
-        return WebDriverWait(self.driver, 10).until(
+        return WebDriverWait(self.driver, 15).until(
             EC.visibility_of_element_located(self.REVIEW_NOT_ABLE_TO_SEND_ERROR_POPUP))
 
     def average_review_gala_apples(self):

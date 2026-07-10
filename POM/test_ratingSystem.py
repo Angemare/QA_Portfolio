@@ -1,5 +1,3 @@
-import time
-from selenium.webdriver.common.by import By
 from main.reviewPage import reviewPage
 from main.HomePage import HomePage
 from main.shopPage import shopPage
@@ -59,10 +57,16 @@ def test_text_limited_characters(logged_in_driver):
     reviewpage.enter_text_review(text_review)
     reviewPage_error_msg_max_text = reviewpage.error_message_appears()
 
-    assert reviewPage_error_msg_max_text.is_displayed()
+    assert reviewPage_error_msg_max_text == True
 
-    if len(text_review) >= 500:
-        assert reviewPage_error_msg_max_text.is_displayed()
+
+# if len(text_review) >= 500:
+# assert reviewPage_error_msg_max_text.is_displayed()
+# else:
+# return False
+
+
+
 
 
 def test_review_without_text_possible(logged_in_driver, enter_star_review=None, check_star_review=None):
