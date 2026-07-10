@@ -1,6 +1,3 @@
-import password
-import username
-
 from conftest import logged_in_driver
 from main.LoginPage import LoginPage
 

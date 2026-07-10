@@ -2,7 +2,6 @@ from main.reviewPage import reviewPage
 from main.HomePage import HomePage
 from main.shopPage import shopPage
 
-
 def test_text_rating_visibility(review_driver):
     driver = review_driver
 
@@ -59,15 +58,10 @@ def test_text_limited_characters(logged_in_driver):
 
     assert reviewPage_error_msg_max_text == True
 
-
 # if len(text_review) >= 500:
 # assert reviewPage_error_msg_max_text.is_displayed()
 # else:
 # return False
-
-
-
-
 
 def test_review_without_text_possible(logged_in_driver, enter_star_review=None, check_star_review=None):
     driver = logged_in_driver

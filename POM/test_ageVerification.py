@@ -1,12 +1,10 @@
 import time
-
 import pytest
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from main.HomePage import HomePage
 from main.shopPage import shopPage
-
 
 
 def test_age_verification_format(logged_in_driver):
