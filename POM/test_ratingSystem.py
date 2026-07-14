@@ -84,7 +84,7 @@ def test_review_without_text_possible(logged_in_driver, enter_star_review=None, 
     reviewpage = reviewPage(driver)
     reviewpage.enter_star_review()
     reviewpage.send_review()
-    driver.refresh()
+    #driver.refresh()
     reviewpage.check_star_review()
 
     assert enter_star_review == check_star_review # return check star review and try again

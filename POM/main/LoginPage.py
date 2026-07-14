@@ -3,7 +3,7 @@ from main.basePage import basePage
 
 
 class LoginPage(basePage):
-    # locators as tuples
+    # locators
     USERNAME_LOGIN_INPUT = (By.XPATH, "//form[@class='form']//input[@type='email']")
     PASSWORD_LOGIN_INPUT = (By.XPATH, "//form[@class='form']//input[@type='password']")
     SIGNIN_BUTTON = (By.XPATH, "//button[text()='Sign In']")

@@ -3,7 +3,7 @@ from main.basePage import basePage
 
 
 class HomePage(basePage):
-    # locators as tuples
+    # locator
     SHOP_BUTTON = (By.XPATH, "//a[@href='/store']")
 
 
