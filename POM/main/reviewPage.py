@@ -20,7 +20,7 @@ class reviewPage(basePage):
 
     # add your review and click send
     def enter_star_review(self):
-        WebDriverWait(self.driver, 20).until(
+        WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable(self.STAR_REVIEW_INPUT)).click()
 
     def enter_text_review(self, text_review):
@@ -36,7 +36,7 @@ class reviewPage(basePage):
         return self.find_element(self.SENT_TEXT_REVIEW).text
 
     def check_star_review(self):
-        self.find_element(self.SENT_STAR_REVIEW)
+        return self.find_element(self.SENT_STAR_REVIEW).is_displayed()
 
     # review löschen mit selenium locator finden
     def click_meatballs_menu(self):
@@ -45,12 +45,11 @@ class reviewPage(basePage):
     def delete_review(self):
         self.click(self.DELETE_REVIEW_BUTTON)
 
-    def error_message_appears(self):
+    def limited_char_error_message(self):
         return WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located(self.MAX_500_CHAR_TEXT_REVIEW_ERROR_MESSAGE)).is_displayed()
-        #return self.find_element(self.MAX_500_CHAR_TEXT_REVIEW_ERROR_MESSAGE).is_displayed()
 
-    def dynamic_error_message(self):
+    def review_error_message_popup(self):
         return WebDriverWait(self.driver, 15).until(
             EC.visibility_of_element_located(self.REVIEW_NOT_ABLE_TO_SEND_ERROR_POPUP))
 

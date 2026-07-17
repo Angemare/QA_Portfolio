@@ -20,15 +20,14 @@ def test_text_rating_visibility(review_driver):
     # add your star review
     reviewpage = reviewPage(driver)
     text_review = "TEST REVIEW"
-    reviewpage.enter_star_review() # use explicit wait
-    reviewpage.enter_text_review(text_review) # use explicit wait
+    reviewpage.enter_star_review()
+    reviewpage.enter_text_review(text_review)
     reviewpage.send_review()
     driver.refresh()
     # return check text review to be able to compare text review
-    reviewPageText = reviewpage.check_text_review() # check for p element text review
-    # check if review is visible
+    reviewPageText = reviewpage.check_text_review() # p element
     assert reviewPageText == text_review
-
+    driver.refresh()
     # using xfail or skip due to AssertionError
 
 def test_text_limited_characters(logged_in_driver):
@@ -40,30 +39,21 @@ def test_text_limited_characters(logged_in_driver):
 
     # age verification
     shoppe = shopPage(driver)
-
     age = "22-05-1988"
     shoppe.enter_age(age)
     shoppe.click_confirm_Age()
-
     # click on bought product to make a review - gala apples
     shoppe.click_gala_apples_to_make_review()
 
     # add your star review
     reviewpage = reviewPage(driver)
-
     text_review = "TEST REVIEW" * 500
     reviewpage.enter_star_review()
     reviewpage.enter_text_review(text_review)
-    reviewPage_error_msg_max_text = reviewpage.error_message_appears()
-
+    reviewPage_error_msg_max_text = reviewpage.limited_char_error_message()
     assert reviewPage_error_msg_max_text == True
 
-# if len(text_review) >= 500:
-# assert reviewPage_error_msg_max_text.is_displayed()
-# else:
-# return False
-
-def test_review_without_text_possible(logged_in_driver, enter_star_review=None, check_star_review=None):
+def test_review_without_text_possible(logged_in_driver):
     driver = logged_in_driver
 
     # navigate to shop page
@@ -72,11 +62,9 @@ def test_review_without_text_possible(logged_in_driver, enter_star_review=None, 
 
     # age verification
     shoppe = shopPage(driver)
-
     age = "22-05-1988"
     shoppe.enter_age(age)
     shoppe.click_confirm_Age()
-
     # click on bought product to make a review - gala apples
     shoppe.click_gala_apples_to_make_review()
 
@@ -84,10 +72,9 @@ def test_review_without_text_possible(logged_in_driver, enter_star_review=None, 
     reviewpage = reviewPage(driver)
     reviewpage.enter_star_review()
     reviewpage.send_review()
-    #driver.refresh()
-    reviewpage.check_star_review()
-
-    assert enter_star_review == check_star_review # return check star review and try again
+    driver.refresh()
+    reviewPage_star_review = reviewpage.check_star_review()
+    assert reviewPage_star_review == True
 
 
 def test_review_without_stars_only_text(logged_in_driver):
@@ -110,12 +97,9 @@ def test_review_without_stars_only_text(logged_in_driver):
     text_review = "TEST REVIEW"
     reviewpage.enter_text_review(text_review)
     reviewpage.send_review()
-
-    # save dynamic error message into a variable
-    dynamic_element_without_stars = reviewpage.dynamic_error_message()
-
-    # wait until dynamic error message visible
-    assert dynamic_element_without_stars.is_displayed()
+    popup_error_msg_no_stars_review = reviewpage.review_error_message_popup()
+    assert popup_error_msg_no_stars_review.is_displayed()
+    driver.refresh()
 
 
 def test_review_average(review_driver):
@@ -135,7 +119,6 @@ def test_review_average(review_driver):
 
     # add your star review
     reviewpage = reviewPage(driver)
-
     reviewpage.enter_star_review()
     reviewpage.send_review()
     driver.refresh()
