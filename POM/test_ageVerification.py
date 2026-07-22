@@ -30,16 +30,16 @@ def test_age_veri_format_dot(logged_in_driver):
     assert no_access.is_displayed()
 
 def test_age_veri_format_slash(logged_in_driver):
-        driver = logged_in_driver
+    driver = logged_in_driver
 
-        # navigate to shop page
-        homepage = HomePage(driver)
-        homepage.click_shop_btn()
+    # navigate to shop page
+    homepage = HomePage(driver)
+    homepage.click_shop_btn()
 
-        shoppe = shopPage(driver)
-        shoppe.enter_age_format_slash()
-        no_access = shoppe.get_invalid_age_verification_msg()
-        assert no_access.is_displayed()
+    shoppe = shopPage(driver)
+    shoppe.enter_age_format_slash()
+    no_access = shoppe.get_invalid_age_verification_msg()
+    assert no_access.is_displayed()
 
 def test_age_veri_format_only_numbers(logged_in_driver):
     driver = logged_in_driver
