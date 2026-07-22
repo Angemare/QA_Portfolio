@@ -33,26 +33,33 @@ class reviewPage(basePage):
 
     # check if review is visible
     def check_text_review(self):
-        return self.find_element(self.SENT_TEXT_REVIEW).text
+        return WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located(self.SENT_TEXT_REVIEW)).text
+        #return self.find_element(self.SENT_TEXT_REVIEW).text
 
     def check_star_review(self):
-        return self.find_element(self.SENT_STAR_REVIEW).is_displayed()
+        return WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located(self.SENT_STAR_REVIEW)).is_displayed()
+        #return self.find_element(self.SENT_STAR_REVIEW).is_displayed()
 
     # review löschen mit selenium locator finden
     def click_meatballs_menu(self):
-        self.click(self.CLICK_MEATBALLS_MENU_BUTTON)
+        WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable(self.CLICK_MEATBALLS_MENU_BUTTON)).click()
+        #self.click(self.CLICK_MEATBALLS_MENU_BUTTON)
 
     def delete_review(self):
-        self.click(self.DELETE_REVIEW_BUTTON)
+        WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable(self.DELETE_REVIEW_BUTTON)).click()
 
-    def limited_char_error_message(self):
+    def get_limited_char_error_message(self):
         return WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located(self.MAX_500_CHAR_TEXT_REVIEW_ERROR_MESSAGE)).is_displayed()
 
-    def review_error_message_popup(self):
-        return WebDriverWait(self.driver, 15).until(
+    def get_review_error_message_popup(self):
+        return WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located(self.REVIEW_NOT_ABLE_TO_SEND_ERROR_POPUP))
 
-    def average_review_gala_apples(self):
+    def get_average_review_gala_apples(self):
         return WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located(self.AVERAGE_REVIEW_GALA_APPLES))

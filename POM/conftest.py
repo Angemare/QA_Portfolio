@@ -1,3 +1,4 @@
+import time
 
 import pytest
 from selenium import webdriver
@@ -34,5 +35,8 @@ def review_driver(logged_in_driver):
     reviewpage = reviewPage(logged_in_driver)
     reviewpage.click_meatballs_menu()
     reviewpage.delete_review()
+    time.sleep(10)
+    # use explicit wait so that alert is present
     alert = logged_in_driver.switch_to.alert
     alert.accept()
+    logged_in_driver.refresh()

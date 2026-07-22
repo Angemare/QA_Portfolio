@@ -14,6 +14,11 @@ class shopPage(basePage):
     CATEGORY_ALOCOHOL_MENU_LINK = (By.XPATH, "//a[@href='#' and text()='Alocohol']")
     ALOCOHOL_PRODUCT_TITLE = (By.XPATH, "//p[@class='lead' and text()='Perlenbacher Pilsner Lager']")
 
+    @classmethod
+    def open_shop_with_age(cls, driver):
+        page =  shopPage(driver)
+        page.enter_default_age()
+        return page
 
     def enter_age(self, age):
         WebDriverWait(self.driver, 10).until(
@@ -37,4 +42,9 @@ class shopPage(basePage):
         self.click(self.CATEGORY_ALOCOHOL_MENU_LINK)
 
     def find_alocohol_product(self):
-        self.find_element(self.ALOCOHOL_PRODUCT_TITLE)
+        return self.find_element(self.ALOCOHOL_PRODUCT_TITLE)
+
+    def enter_default_age(self):
+        age = "22-05-1988"
+        self.enter_age(age)
+        self.click_confirm_Age()
