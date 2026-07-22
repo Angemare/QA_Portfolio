@@ -1,13 +1,8 @@
-import time
-import pytest
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from main.HomePage import HomePage
 from main.shopPage import shopPage
 
 
-def test_age_verification_format(logged_in_driver):
+def test_age_verification_format_hyphen(logged_in_driver):
     driver = logged_in_driver
 
     # navigate to shop page
@@ -16,21 +11,61 @@ def test_age_verification_format(logged_in_driver):
 
     # age verification
     shoppe = shopPage(driver)
-    age = "22-05-1988"
-    shoppe.enter_age(age)
-    shoppe.click_confirm_Age()
-    time.sleep(5)
-
+    shoppe.enter_default_age()
     # open alcohol menu
     shoppe.click_alcohol_menu()
-    shoppe.find_alocohol_product()
-    time.sleep(5)
+    text_category_alocohol = shoppe.get_text_alocohol()
+    assert text_category_alocohol == True
 
-    find_title_perlenbacher_pilsner_lager = WebDriverWait(driver, 10).until(
-        EC.visibility_of_element_located((By.XPATH, "//p[@class='lead' and text()='Perlenbacher Pilsner Lager']"))
-    )
-    assert find_title_perlenbacher_pilsner_lager.is_displayed()
+def test_age_veri_format_dot(logged_in_driver):
+    driver = logged_in_driver
 
+    # navigate to shop page
+    homepage = HomePage(driver)
+    homepage.click_shop_btn()
+
+    shoppe = shopPage(driver)
+    shoppe.enter_age_format_dot()
+    no_access = shoppe.get_invalid_age_verification_msg()
+    assert no_access.is_displayed()
+
+def test_age_veri_format_slash(logged_in_driver):
+        driver = logged_in_driver
+
+        # navigate to shop page
+        homepage = HomePage(driver)
+        homepage.click_shop_btn()
+
+        shoppe = shopPage(driver)
+        shoppe.enter_age_format_slash()
+        no_access = shoppe.get_invalid_age_verification_msg()
+        assert no_access.is_displayed()
+
+def test_age_veri_format_only_numbers(logged_in_driver):
+    driver = logged_in_driver
+
+    # navigate to shop page
+    homepage = HomePage(driver)
+    homepage.click_shop_btn()
+
+    shoppe = shopPage(driver)
+    shoppe.enter_age_format_only_num()
+    no_access = shoppe.get_invalid_age_verification_msg()
+    assert no_access.is_displayed()
+
+
+def test_younger_than_18_age_verification(logged_in_driver):
+    driver = logged_in_driver
+
+    # navigate to shop page
+    homepage = HomePage(driver)
+    homepage.click_shop_btn()
+
+    # age verification
+    shoppe = shopPage(driver)
+    shoppe.enter_underage_date()
+    no_access = shoppe.get_invalid_age_verification_msg()
+    assert no_access.is_displayed()
 
 
 
@@ -43,30 +78,21 @@ def test_age_verification_format(logged_in_driver):
     #assert test_age_verification_format(date_format) == expected
 
 
-@pytest.mark.parametrize("date_format, expected", [
-    ("22/05/1988", AttributeError),
-    ("22.05.1988", AttributeError),
-    ("22051988", AttributeError)
-])
-def test_age_verification_format_no_access(date_format, expected):
-    with pytest.raises(AttributeError):
-        test_age_verification_format(date_format)
+#@pytest.mark.parametrize("date_format, expected", [
+    #("22/05/1988", AttributeError),
+    #("22.05.1988", AttributeError),
+    #("22051988", AttributeError)
+#])
+#def test_age_verification_format_no_access(date_format, expected):
+    #with pytest.raises(AttributeError):
+       # test_valid_age_verification_access_to_alcohol(date_format)
 
 
 
-
-    # wrong date format
-    # navigate to menu of alcohol to check access
-
-    #category_alcohol = driver.find_element(By.XPATH, "//a[@href='#' and text()='Alocohol']")
-    #category_alcohol.click()
-
-    #no_access_to_alcohol = driver.find_element(By.XPATH, "//div[@class='card-body']")
-    #assert no_access_to_alcohol.is_displayed()
 
 
     # age veri date format - ok
     # customers 18. birthday is today
-    # customer is younger than 18
+    # customer is younger than 18 - ok
     # new age verification after wrong input
     # open URL with alcoholic products - expected: no alcoholic products visible
