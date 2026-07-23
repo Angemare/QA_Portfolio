@@ -5,7 +5,6 @@ from main.basePage import basePage
 
 
 class shoppingCartPage(basePage):
-
     # locators
     SHIPMENT_STREET_INPUT = (By.XPATH, "//form[@class='payment-form']//input[@name='street']")
     SHIPMENT_CITY_INPUT = (By.XPATH, "//form[@class='payment-form']//input[@name='city']")

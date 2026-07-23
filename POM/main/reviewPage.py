@@ -5,8 +5,7 @@ from main.basePage import basePage
 
 
 class reviewPage(basePage):
-
-    # locator
+    # locators
     STAR_REVIEW_INPUT = (By.XPATH, "//*[@id='root']/div/section/section[1]/div[2]/div/div/div/div/div[1]/div/span[5]")
     TEXT_REVIEW_INPUT = (By.XPATH, "//textarea[@class='new-review-form-control ']")
     SEND_REVIEW_BUTTON = (By.XPATH, "//button[@class= 'new-review-btn new-review-btn-send']")

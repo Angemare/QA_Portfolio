@@ -8,14 +8,11 @@ from main.shoppingCartPage import shoppingCartPage
 
 def test_shipment_cost_threshold_20(logged_in_driver):
     driver = logged_in_driver
-
     # navigate to shop page
     homepage = HomePage(driver)
     homepage.click_shop_btn()
-
-    # age verification
-    shoppe = shopPage(driver)
-    shoppe.enter_default_age()
+    # open shoppage + age verification + click confirm with @classemethod in shopPage
+    shoppe = shopPage.open_shop_with_age(driver)
     # order amount over 20
     shoppe.enter_quantity_add_to_cart_open_shopping_cartpage()
     shopcartpage = shoppingCartPage(driver)
@@ -27,25 +24,21 @@ def test_shipment_cost_threshold_20(logged_in_driver):
     # order amound under 20
     homepage = HomePage(driver)
     homepage.click_shop_btn()
-
     shoppe.click_gala_apples_to_cart()
     shoppe.click_shopping_cart_icon()
-
     shopcartpage = shoppingCartPage(driver)
     no_shipment_free = shopcartpage.get_delivery_costs()
     assert no_shipment_free.is_displayed()
 
     shopcartpage.clear_and_get_empty_shoppingcart()
 
-
 def test_updated_shipment_costs_after_change_amount_to_18_on_cartpage(logged_in_driver):
     driver = logged_in_driver
     # navigate to shop page
     homepage = HomePage(driver)
     homepage.click_shop_btn()
-    # age verification
-    shoppe = shopPage(driver)
-    shoppe.enter_default_age()
+    # open shoppage + age verification + click confirm with @classemethod in shopPage
+    shoppe = shopPage.open_shop_with_age(driver)
     # order amount over 20
     shoppe.enter_quantity_add_to_cart_open_shopping_cartpage()
     shopcartpage = shoppingCartPage(driver)
@@ -64,15 +57,13 @@ def test_updated_shipment_costs_after_change_amount_to_18_on_cartpage(logged_in_
 
         shopcartpage.clear_and_get_empty_shoppingcart()
 
-
 def test_free_shipment_info(logged_in_driver):
     driver = logged_in_driver
     # navigate to shop page
     homepage = HomePage(driver)
     homepage.click_shop_btn()
-    # age verification
-    shoppe = shopPage(driver)
-    shoppe.enter_default_age()
+    # open shoppage + age verification + click confirm with @classemethod in shopPage
+    shoppe = shopPage.open_shop_with_age(driver)
     # order amount over 20
     shoppe.enter_quantity_add_to_cart_open_shopping_cartpage()
     shopcartpage = shoppingCartPage(driver)

@@ -60,7 +60,7 @@ class shopPage(basePage):
 
     def click_and_get_invalid_age_verification_msg(self):
         self.click_alcohol_btn()
-        self.get_message_no_access_to_alcohol()
+        return self.get_message_no_access_to_alcohol()
 
     def enter_quantity_gala_apples(self, quantity):
         WebDriverWait(self.driver, 10).until(

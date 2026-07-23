@@ -4,16 +4,13 @@ from main.shopPage import shopPage
 
 def test_text_rating_visibility(review_driver):
     driver = review_driver
-
     # navigate to shop page
     homepage = HomePage(driver)
     homepage.click_shop_btn()
-
     # open shoppage + age verification + click confirm with @classemethod in shopPage
     shoppe = shopPage.open_shop_with_age(driver)
     # click on bought product to make a review - gala apples
     shoppe.click_gala_apples_to_make_review()
-
     # add your star review
     reviewpage = reviewPage(driver)
     text_review = "TEST REVIEW"
@@ -27,17 +24,13 @@ def test_text_rating_visibility(review_driver):
 
 def test_text_limited_characters(logged_in_driver):
     driver = logged_in_driver
-
     # navigate to shop page
     homepage = HomePage(driver)
     homepage.click_shop_btn()
-
     # open shoppage + age verification + click confirm with @classemethod in shopPage
     shoppe = shopPage.open_shop_with_age(driver)
-
     # click on bought product to make a review - gala apples
     shoppe.click_gala_apples_to_make_review()
-
     # add your star review
     reviewpage = reviewPage(driver)
     text_review = "TEST REVIEW" * 500
@@ -48,17 +41,13 @@ def test_text_limited_characters(logged_in_driver):
 
 def test_review_without_text_possible(review_driver):
     driver = review_driver
-
     # navigate to shop page
     homepage = HomePage(driver)
     homepage.click_shop_btn()
-
     # open shoppage + age verification + click confirm with @classemethod in shopPage
     shoppe = shopPage.open_shop_with_age(driver)
-
     # click on bought product to make a review - gala apples
     shoppe.click_gala_apples_to_make_review()
-
     # add your star review
     reviewpage = reviewPage(driver)
     reviewpage.enter_star_review()
@@ -70,17 +59,13 @@ def test_review_without_text_possible(review_driver):
 
 def test_review_without_stars_only_text(logged_in_driver):
     driver = logged_in_driver
-
     # navigate to shop page
     homepage = HomePage(driver)
     homepage.click_shop_btn()
-
     # open shoppage + age verification + click confirm with @classemethod in shopPage
     shoppe = shopPage.open_shop_with_age(driver)
-
     # click on bought product to make a review - gala apples
     shoppe.click_gala_apples_to_make_review()
-
     # add your star review
     reviewpage = reviewPage(driver)
     text_review = "TEST REVIEW"
@@ -89,19 +74,15 @@ def test_review_without_stars_only_text(logged_in_driver):
     popup_error_msg_no_stars_review = reviewpage.get_review_error_message_popup()
     assert popup_error_msg_no_stars_review.is_displayed()
 
-
 def test_review_average(review_driver):
     driver = review_driver
-
     # navigate to shop page
     homepage = HomePage(driver)
     homepage.click_shop_btn()
-
     # open shoppage + age verification + click confirm with @classemethod in shopPage
     shoppe = shopPage.open_shop_with_age(driver)
     # click on bought product to make a review - gala apples
     shoppe.click_gala_apples_to_make_review()
-
     # add your star review
     reviewpage = reviewPage(driver)
     reviewpage.enter_star_review()
