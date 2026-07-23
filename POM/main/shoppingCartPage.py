@@ -1,4 +1,6 @@
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from main.basePage import basePage
 
 
@@ -13,6 +15,11 @@ class shoppingCartPage(basePage):
     PAYMENT_EXPIRATION_DATE_INPUT = (By.XPATH, "//form[@class='payment-form']//input[@name='expiration']")
     PAYMENT_CVV_INPUT = (By.XPATH, "//form[@class='payment-form']//input[@name='cvv']")
     BUY_NOW_BUTTON = (By.XPATH, "//form[@class='payment-form']//button[text()='Buy now']")
+    FREE_SHIPMENT_TEXT = (By.XPATH, "//h5[@class='fw-bold mb-0' and text()='0']")
+    NO_SHIPMENT_TEXT = (By.XPATH, "//h5[@class='fw-bold mb-0' and text()='5']")
+    CLEAR_SHOPPINGCART_BUTTON = (By.XPATH, "//a[@class='remove-icon']")
+    GET_EMPTY_CART_TEXT = (By.XPATH, "//h2[text()='Your cart is empty']")
+
 
 
     # enter shipment address details
@@ -48,7 +55,21 @@ class shoppingCartPage(basePage):
     def click_buy_now(self):
         self.click(self.BUY_NOW_BUTTON)
 
+    def get_free_shipment(self):
+        return WebDriverWait(self.driver, 20).until(
+            EC.visibility_of_element_located(self.FREE_SHIPMENT_TEXT))
 
+    def get_delivery_costs(self):
+        return WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located(self.NO_SHIPMENT_TEXT))
 
+    def click_to_clear_shoppingcart(self):
+        self.click(self.CLEAR_SHOPPINGCART_BUTTON)
 
+    def get_empty_cart(self):
+        return WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located(self.GET_EMPTY_CART_TEXT)).is_displayed()
 
+    def get_empty_shoppingcart(self):
+        self.click_to_clear_shoppingcart()
+        self.get_empty_cart()

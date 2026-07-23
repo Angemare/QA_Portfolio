@@ -32,12 +32,12 @@ class reviewPage(basePage):
             EC.element_to_be_clickable(self.SEND_REVIEW_BUTTON)).click()
 
     # check if review is visible
-    def check_text_review(self):
+    def get_text_review(self):
         return WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located(self.SENT_TEXT_REVIEW)).text
         #return self.find_element(self.SENT_TEXT_REVIEW).text
 
-    def check_star_review(self):
+    def get_star_review(self):
         return WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located(self.SENT_STAR_REVIEW)).is_displayed()
         #return self.find_element(self.SENT_STAR_REVIEW).is_displayed()

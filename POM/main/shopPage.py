@@ -16,6 +16,7 @@ class shopPage(basePage):
     ALOCOHOL_CATEGORY_TEXT = (By.XPATH, "//a[@href='#!' and text()='Alocohol']")
     ALCOHOL_BUTTON = (By.XPATH, "//a[@href='#' and text()='Alocohol']")
     NO_ACCESS_TO_ALCOHOL_TEXT = (By.XPATH, "//div[@class='card-body']")
+    QUANTITY_GALA_APPLES_INPUT = (By.XPATH, "//p[text()='Gala Apples']/ancestor::div[@class='card']//input")
 
 
     @classmethod
@@ -48,7 +49,6 @@ class shopPage(basePage):
     def get_text_alocohol(self):
         return WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located(self.ALOCOHOL_CATEGORY_TEXT)).is_displayed()
-        #return self.find_element(self.ALOCOHOL_PRODUCT_TITLE)
 
     def click_alcohol_btn(self):
         self.click(self.ALCOHOL_BUTTON)
@@ -60,6 +60,10 @@ class shopPage(basePage):
     def get_invalid_age_verification_msg(self):
         self.click_alcohol_btn()
         return self.get_message_no_access_to_alcohol()
+
+    def enter_quantity_gala_apples(self, quantity):
+        WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located(self.QUANTITY_GALA_APPLES_INPUT)).send_keys(quantity)
 
     def enter_default_age(self):
         age = "22-05-1988"
@@ -82,6 +86,13 @@ class shopPage(basePage):
         self.click_confirm_Age()
 
     def enter_age_format_only_num(self):
-        age = "1234567"
+        age = "12031955"
         self.enter_age(age)
         self.click_confirm_Age()
+
+    def enter_quantity_add_to_cart_open_shopping_cartpage(self):
+        quantity = "0"
+        self.enter_quantity_gala_apples(quantity)
+        self.click_gala_apples_to_cart()
+        self.click_shopping_cart_icon()
+

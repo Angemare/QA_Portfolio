@@ -1,12 +1,10 @@
-import time
-from selenium.webdriver.common.by import By
-
 from conftest import logged_in_driver
 from main.HomePage import HomePage
 from main.shopPage import shopPage
+from main.shoppingCartPage import shoppingCartPage
 
 
-def test_delivery_costs_threshold(logged_in_driver):
+def test_shipment_cost_threshold_20(logged_in_driver):
     driver = logged_in_driver
 
     # navigate to shop page
@@ -15,27 +13,33 @@ def test_delivery_costs_threshold(logged_in_driver):
 
     # age verification
     shoppe = shopPage(driver)
+    shoppe.enter_default_age()
+    # order amount over 20
+    shoppe.enter_quantity_add_to_cart_open_shopping_cartpage()
+    shopcartpage = shoppingCartPage(driver)
+    shipment_free = shopcartpage.get_free_shipment()
+    assert shipment_free.is_displayed()
 
-    age = "22-05-1988"
-    shoppe.enter_age(age)
-    shoppe.click_confirm_Age()
-    time.sleep(10)
+    shopcartpage.get_empty_shoppingcart()
 
-    # add gala apples to cart
+    # order amound under 20
+    homepage = HomePage(driver)
+    homepage.click_shop_btn()
+
     shoppe.click_gala_apples_to_cart()
-
-    # click on shopping cart
     shoppe.click_shopping_cart_icon()
 
-    #assert driver.current_url == "https://grocerymate.masterschool.com/checkout"
+    shopcartpage = shoppingCartPage(driver)
+    no_shipment_free = shopcartpage.get_delivery_costs()
+    assert no_shipment_free.is_displayed()
 
-    shipment_not_free = driver.find_element(By.XPATH, "//h5[@class='fw-bold mb-0' and text()='5']")
-    assert shipment_not_free.is_displayed()
-    # empty shopping cart -.-
+    shopcartpage.get_empty_shoppingcart()
 
-    # test delivery costs visible for amount >= und < 20 euro:
-    # wenn product total >= 20 -> assert shipment == 0.00
-    # wenn product total < 20 -> assert shipment == 5.00
+
+def test_shipment_costs_update_after_refreshing_page(logged_in_driver):
+    driver = logged_in_driver
+
+
 
     # check update of delivery costs on shoppingcart site after changing order
     # does info appear of difference value to reach free delivery

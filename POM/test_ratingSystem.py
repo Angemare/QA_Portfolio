@@ -22,7 +22,7 @@ def test_text_rating_visibility(review_driver):
     reviewpage.send_review()
     driver.refresh()
     # return check text review to be able to compare text review
-    reviewPageText = reviewpage.check_text_review() # p element
+    reviewPageText = reviewpage.get_text_review() # p element
     assert reviewPageText == text_review
 
 def test_text_limited_characters(logged_in_driver):
@@ -64,7 +64,7 @@ def test_review_without_text_possible(review_driver):
     reviewpage.enter_star_review()
     reviewpage.send_review()
     driver.refresh()
-    reviewPage_star_review = reviewpage.check_star_review()
+    reviewPage_star_review = reviewpage.get_star_review()
     assert reviewPage_star_review == True
 
 
