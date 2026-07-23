@@ -50,7 +50,7 @@ def test_age_veri_format_only_numbers(logged_in_driver):
 
     shoppe = shopPage(driver)
     shoppe.enter_age_format_only_num()
-    no_access = shoppe.get_invalid_age_verification_msg()
+    no_access = shoppe.click_and_get_invalid_age_verification_msg()
     assert no_access.is_displayed()
 
 
@@ -64,8 +64,10 @@ def test_younger_than_18_age_verification(logged_in_driver):
     # age verification
     shoppe = shopPage(driver)
     shoppe.enter_underage_date()
-    no_access = shoppe.get_invalid_age_verification_msg()
+    no_access = shoppe.click_and_get_invalid_age_verification_msg()
     assert no_access.is_displayed()
+
+
 
 
 
@@ -87,12 +89,6 @@ def test_younger_than_18_age_verification(logged_in_driver):
     #with pytest.raises(AttributeError):
        # test_valid_age_verification_access_to_alcohol(date_format)
 
-
-
-
-
-    # age veri date format - ok
     # customers 18. birthday is today
-    # customer is younger than 18 - ok
     # new age verification after wrong input
     # open URL with alcoholic products - expected: no alcoholic products visible

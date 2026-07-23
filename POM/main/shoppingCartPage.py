@@ -16,10 +16,11 @@ class shoppingCartPage(basePage):
     PAYMENT_CVV_INPUT = (By.XPATH, "//form[@class='payment-form']//input[@name='cvv']")
     BUY_NOW_BUTTON = (By.XPATH, "//form[@class='payment-form']//button[text()='Buy now']")
     FREE_SHIPMENT_TEXT = (By.XPATH, "//h5[@class='fw-bold mb-0' and text()='0']")
-    NO_SHIPMENT_TEXT = (By.XPATH, "//h5[@class='fw-bold mb-0' and text()='5']")
+    NO_FREE_SHIPMENT_TEXT = (By.XPATH, "//h5[@class='fw-bold mb-0' and text()='5' and text()='€']")
     CLEAR_SHOPPINGCART_BUTTON = (By.XPATH, "//a[@class='remove-icon']")
     GET_EMPTY_CART_TEXT = (By.XPATH, "//h2[text()='Your cart is empty']")
-
+    MINUS_PRODUCT_BUTTON = (By.XPATH, "//button[@class='minus']")
+    INFO_MSG_FREE_SHIPMENT_FROM_20_TEXT = (By.XPATH, "//div[@class='free-shipment-message']")
 
 
     # enter shipment address details
@@ -37,8 +38,8 @@ class shoppingCartPage(basePage):
 
     # enter payment details and click buy now button
     def enter_card_number(self, cardnumber):
-        cardnumber_input = self.driver.find_element(*self.PAYMENT_CARDNUMBER_INPUT)
-        cardnumber_input.send_keys(cardnumber)
+        cnumber_input = self.driver.find_element(*self.PAYMENT_CARDNUMBER_INPUT)
+        cnumber_input.send_keys(cardnumber)
 
     def enter_name_on_card(self, name_on_card):
         name_on_card_input = self.driver.find_element(*self.PAYMENT_NAME_ON_CARD_INPUT)
@@ -56,20 +57,30 @@ class shoppingCartPage(basePage):
         self.click(self.BUY_NOW_BUTTON)
 
     def get_free_shipment(self):
-        return WebDriverWait(self.driver, 20).until(
+        return WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located(self.FREE_SHIPMENT_TEXT))
 
     def get_delivery_costs(self):
         return WebDriverWait(self.driver, 10).until(
-            EC.visibility_of_element_located(self.NO_SHIPMENT_TEXT))
+            EC.visibility_of_element_located(self.NO_FREE_SHIPMENT_TEXT))
 
     def click_to_clear_shoppingcart(self):
         self.click(self.CLEAR_SHOPPINGCART_BUTTON)
 
     def get_empty_cart(self):
         return WebDriverWait(self.driver, 10).until(
-            EC.visibility_of_element_located(self.GET_EMPTY_CART_TEXT)).is_displayed()
+            EC.visibility_of_element_located(self.GET_EMPTY_CART_TEXT))
 
-    def get_empty_shoppingcart(self):
+    def click_minus_product_btn(self):
+        WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable(self.MINUS_PRODUCT_BUTTON)).click()
+
+    def get_free_shipment_message(self):
+        return WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located(self.INFO_MSG_FREE_SHIPMENT_FROM_20_TEXT))
+
+    def clear_and_get_empty_shoppingcart(self):
         self.click_to_clear_shoppingcart()
         self.get_empty_cart()
+
+

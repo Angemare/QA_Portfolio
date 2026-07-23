@@ -7,7 +7,7 @@ class basePage:
 
     def __init__(self, driver):
         self.driver = driver
-        self.timeout = 10
+        self.timeout = 15
 
     def click(self, locator):
         element = self.driver.find_element(*locator) # element finden

@@ -37,7 +37,8 @@ class shopPage(basePage):
         self.click(self.ADD_TO_CART_GALA_APPLES_BUTTON)
 
     def click_shopping_cart_icon(self):
-        self.click(self.SHOPPING_CART_ICON)
+        WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable(self.SHOPPING_CART_ICON)).click()
 
     def click_gala_apples_to_make_review(self):
         self.click(self.NAVIGATE_BOUGHT_GALA_APPLES_IMAGE)
@@ -57,9 +58,9 @@ class shopPage(basePage):
         return WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located(self.NO_ACCESS_TO_ALCOHOL_TEXT))
 
-    def get_invalid_age_verification_msg(self):
+    def click_and_get_invalid_age_verification_msg(self):
         self.click_alcohol_btn()
-        return self.get_message_no_access_to_alcohol()
+        self.get_message_no_access_to_alcohol()
 
     def enter_quantity_gala_apples(self, quantity):
         WebDriverWait(self.driver, 10).until(
