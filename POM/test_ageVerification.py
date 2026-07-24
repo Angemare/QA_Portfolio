@@ -1,8 +1,6 @@
 import pytest
-
 from main.HomePage import HomePage
 from main.shopPage import shopPage
-
 
 def test_age_verification_format_hyphen(logged_in_driver):
     driver = logged_in_driver
@@ -16,7 +14,6 @@ def test_age_verification_format_hyphen(logged_in_driver):
     shoppe.click_alcohol_menu()
     text_category_alocohol = shoppe.get_text_alocohol()
     assert text_category_alocohol == True
-
 
 @pytest.mark.parametrize("date", [
     ("22.04.1988"),

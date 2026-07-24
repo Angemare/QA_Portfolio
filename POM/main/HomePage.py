@@ -9,3 +9,4 @@ class HomePage(basePage):
 
     def click_shop_btn(self):
         self.click(self.SHOP_BUTTON)
+

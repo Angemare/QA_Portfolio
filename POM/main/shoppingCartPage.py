@@ -20,6 +20,8 @@ class shoppingCartPage(basePage):
     GET_EMPTY_CART_TEXT = (By.XPATH, "//h2[text()='Your cart is empty']")
     MINUS_PRODUCT_BUTTON = (By.XPATH, "//button[@class='minus']")
     INFO_MSG_FREE_SHIPMENT_FROM_20_TEXT = (By.XPATH, "//div[@class='free-shipment-message']")
+    SHOP_BTN = (By.XPATH, "//a[@href='/store']")
+
 
     # enter shipment address details
     def enter_street(self, street):
@@ -84,5 +86,7 @@ class shoppingCartPage(basePage):
     def does_element_5_exist(self):
         return self.driver.find_elements(*self.NO_FREE_SHIPMENT_TEXT)
 
+    def click_shop_btn(self):
+        self.click(self.SHOP_BTN)
 
 
