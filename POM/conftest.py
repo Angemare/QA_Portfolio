@@ -2,6 +2,7 @@ import pytest
 from selenium import webdriver
 from main.LoginPage import LoginPage
 from main.reviewPage import reviewPage
+from main.shoppingCartPage import shoppingCartPage
 
 
 @pytest.fixture
@@ -35,3 +36,9 @@ def review_driver(logged_in_driver):
     alert = logged_in_driver.switch_to.alert
     alert.accept()
     logged_in_driver.refresh()
+
+@pytest.fixture
+def shoppingcart_driver(logged_in_driver):
+    yield logged_in_driver
+    shopcartpage = shoppingCartPage(logged_in_driver)
+    shopcartpage.clear_and_get_empty_shoppingcart()

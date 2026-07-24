@@ -26,3 +26,8 @@ class basePage:
         return WebDriverWait(self.driver, self.timeout).until(
             EC.presence_of_element_located(locator))
 
+    def find_elements(self, locator):
+        """ Find multiple elements based on the given locator """
+        return WebDriverWait(self.driver, self.timeout).until(
+            EC.presence_of_all_elements_located(locator))
+

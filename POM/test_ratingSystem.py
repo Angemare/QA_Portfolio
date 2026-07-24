@@ -56,7 +56,6 @@ def test_review_without_text_possible(review_driver):
     reviewPage_star_review = reviewpage.get_star_review()
     assert reviewPage_star_review == True
 
-
 def test_review_without_stars_only_text(logged_in_driver):
     driver = logged_in_driver
     # navigate to shop page

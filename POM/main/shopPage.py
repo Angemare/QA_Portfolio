@@ -71,26 +71,6 @@ class shopPage(basePage):
         self.enter_age(age)
         self.click_confirm_Age()
 
-    def enter_underage_date(self):
-        age = "20-07-2009"
-        self.enter_age(age)
-        self.click_confirm_Age()
-
-    def enter_age_format_dot(self):
-        age = "20.07.1977"
-        self.enter_age(age)
-        self.click_confirm_Age()
-
-    def enter_age_format_slash(self):
-        age = "17/03/1999"
-        self.enter_age(age)
-        self.click_confirm_Age()
-
-    def enter_age_format_only_num(self):
-        age = "12031955"
-        self.enter_age(age)
-        self.click_confirm_Age()
-
     def enter_quantity_add_to_cart_open_shopping_cartpage(self):
         quantity = "0"
         self.enter_quantity_gala_apples(quantity)
