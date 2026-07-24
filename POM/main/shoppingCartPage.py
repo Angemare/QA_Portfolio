@@ -15,13 +15,11 @@ class shoppingCartPage(basePage):
     PAYMENT_CVV_INPUT = (By.XPATH, "//form[@class='payment-form']//input[@name='cvv']")
     BUY_NOW_BUTTON = (By.XPATH, "//form[@class='payment-form']//button[text()='Buy now']")
     FREE_SHIPMENT_TEXT = (By.XPATH, "//h5[@class='fw-bold mb-0' and text()='0']")
-    NO_FREE_SHIPMENT_TEXT = (By.XPATH, "//h5[@class='fw-bold mb-0' and text()='5' and text()='€']")
+    NO_FREE_SHIPMENT_TEXT = (By.XPATH, "//h5[@class='fw-bold mb-0' and text()='5']")
     CLEAR_SHOPPINGCART_BUTTON = (By.XPATH, "//a[@class='remove-icon']")
     GET_EMPTY_CART_TEXT = (By.XPATH, "//h2[text()='Your cart is empty']")
     MINUS_PRODUCT_BUTTON = (By.XPATH, "//button[@class='minus']")
     INFO_MSG_FREE_SHIPMENT_FROM_20_TEXT = (By.XPATH, "//div[@class='free-shipment-message']")
-    SHOP_BTN = (By.XPATH, "//a[@href='/store']")
-
 
     # enter shipment address details
     def enter_street(self, street):
@@ -61,7 +59,7 @@ class shoppingCartPage(basePage):
             EC.visibility_of_element_located(self.FREE_SHIPMENT_TEXT))
 
     def get_delivery_costs(self):
-        return WebDriverWait(self.driver, 10).until(
+        return WebDriverWait(self.driver, 20).until(
             EC.visibility_of_element_located(self.NO_FREE_SHIPMENT_TEXT))
 
     def click_to_clear_shoppingcart(self):
@@ -86,7 +84,6 @@ class shoppingCartPage(basePage):
     def does_element_5_exist(self):
         return self.driver.find_elements(*self.NO_FREE_SHIPMENT_TEXT)
 
-    def click_shop_btn(self):
-        self.click(self.SHOP_BTN)
+
 
 
