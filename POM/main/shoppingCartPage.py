@@ -21,6 +21,7 @@ class shoppingCartPage(basePage):
     MINUS_PRODUCT_BUTTON = (By.XPATH, "//button[@class='minus']")
     INFO_MSG_FREE_SHIPMENT_FROM_20_TEXT = (By.XPATH, "//div[@class='free-shipment-message']")
 
+
     # enter shipment address details
     def enter_street(self, street):
         street_input = self.driver.find_element(*self.SHIPMENT_STREET_INPUT)

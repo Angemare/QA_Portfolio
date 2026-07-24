@@ -1,3 +1,4 @@
+
 from main.HomePage import HomePage
 from main.shopPage import shopPage
 from main.shoppingCartPage import shoppingCartPage
@@ -25,7 +26,6 @@ def test_under_20_delivery_cost(shoppingcart_driver):
     shopcartpage = shoppingCartPage(driver)
     no_shipment_free = shopcartpage.get_delivery_costs()
     assert no_shipment_free.is_displayed()
-
 
 def test_updated_shipment_costs_after_change_amount_to_18_on_cartpage(shoppingcart_driver):
     driver = shoppingcart_driver
