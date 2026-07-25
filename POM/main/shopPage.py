@@ -37,7 +37,7 @@ class shopPage(basePage):
         self.click(self.ADD_TO_CART_GALA_APPLES_BUTTON)
 
     def click_shopping_cart_icon(self):
-        WebDriverWait(self.driver, 20).until(
+        WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable(self.SHOPPING_CART_ICON)).click()
 
     def click_gala_apples_to_make_review(self):

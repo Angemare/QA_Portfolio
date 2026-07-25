@@ -1,3 +1,5 @@
+import time
+
 import pytest
 from selenium import webdriver
 from main.LoginPage import LoginPage
@@ -40,6 +42,7 @@ def review_driver(logged_in_driver):
 @pytest.fixture
 def shoppingcart_driver(logged_in_driver):
     yield logged_in_driver
+    time.sleep(10)
     shopcartpage = shoppingCartPage(logged_in_driver)
     shopcartpage.clear_and_empty_shoppingcart()
    # logged_in_driver.refresh()

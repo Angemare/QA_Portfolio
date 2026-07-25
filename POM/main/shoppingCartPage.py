@@ -15,7 +15,7 @@ class shoppingCartPage(basePage):
     PAYMENT_CVV_INPUT = (By.XPATH, "//form[@class='payment-form']//input[@name='cvv']")
     BUY_NOW_BUTTON = (By.XPATH, "//form[@class='payment-form']//button[text()='Buy now']")
     FREE_SHIPMENT_TEXT = (By.XPATH, "//h5[@class='fw-bold mb-0' and text()='0']")
-    NO_FREE_SHIPMENT_TEXT = (By.XPATH, "//h5[@class='fw-bold mb-0' and text()='5']")
+    NO_FREE_SHIPMENT_TEXT = (By.XPATH, "//h5[@class='fw-bold mb-0' and text()='5' and text()='€']")
     CLEAR_SHOPPINGCART_BUTTON = (By.XPATH, "//a[@class='remove-icon']")
     GET_EMPTY_CART_TEXT = (By.XPATH, "//div[@class='empty-cart-container']/h2[text()='Your cart is empty']")
     MINUS_PRODUCT_BUTTON = (By.XPATH, "//button[@class='minus']")
@@ -80,7 +80,7 @@ class shoppingCartPage(basePage):
 
     def clear_and_empty_shoppingcart(self):
         self.click_to_clear_shoppingcart()
-        return self.empty_cart()
+        self.empty_cart()
 
     def does_element_5_exist(self):
         return self.driver.find_elements(*self.NO_FREE_SHIPMENT_TEXT)
