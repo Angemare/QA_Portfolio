@@ -41,5 +41,5 @@ def review_driver(logged_in_driver):
 def shoppingcart_driver(logged_in_driver):
     yield logged_in_driver
     shopcartpage = shoppingCartPage(logged_in_driver)
-    shopcartpage.clear_and_get_empty_shoppingcart()
-    logged_in_driver.refresh()
+    shopcartpage.clear_and_empty_shoppingcart()
+   # logged_in_driver.refresh()

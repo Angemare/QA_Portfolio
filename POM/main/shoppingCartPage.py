@@ -17,7 +17,7 @@ class shoppingCartPage(basePage):
     FREE_SHIPMENT_TEXT = (By.XPATH, "//h5[@class='fw-bold mb-0' and text()='0']")
     NO_FREE_SHIPMENT_TEXT = (By.XPATH, "//h5[@class='fw-bold mb-0' and text()='5']")
     CLEAR_SHOPPINGCART_BUTTON = (By.XPATH, "//a[@class='remove-icon']")
-    GET_EMPTY_CART_TEXT = (By.XPATH, "//h2[text()='Your cart is empty']")
+    GET_EMPTY_CART_TEXT = (By.XPATH, "//div[@class='empty-cart-container']/h2[text()='Your cart is empty']")
     MINUS_PRODUCT_BUTTON = (By.XPATH, "//button[@class='minus']")
     INFO_MSG_FREE_SHIPMENT_FROM_20_TEXT = (By.XPATH, "//div[@class='free-shipment-message']")
 
@@ -60,13 +60,13 @@ class shoppingCartPage(basePage):
             EC.visibility_of_element_located(self.FREE_SHIPMENT_TEXT))
 
     def get_delivery_costs(self):
-        return WebDriverWait(self.driver, 20).until(
+        return WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located(self.NO_FREE_SHIPMENT_TEXT))
 
     def click_to_clear_shoppingcart(self):
-        self.click(self.CLEAR_SHOPPINGCART_BUTTON)
+       self.click(self.CLEAR_SHOPPINGCART_BUTTON)
 
-    def get_empty_cart(self):
+    def empty_cart(self):
         return WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located(self.GET_EMPTY_CART_TEXT))
 
@@ -78,9 +78,9 @@ class shoppingCartPage(basePage):
         return WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located(self.INFO_MSG_FREE_SHIPMENT_FROM_20_TEXT))
 
-    def clear_and_get_empty_shoppingcart(self):
+    def clear_and_empty_shoppingcart(self):
         self.click_to_clear_shoppingcart()
-        self.get_empty_cart()
+        return self.empty_cart()
 
     def does_element_5_exist(self):
         return self.driver.find_elements(*self.NO_FREE_SHIPMENT_TEXT)
