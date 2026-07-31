@@ -19,7 +19,7 @@ def driver():
 
 @pytest.fixture
 def logged_in_driver(driver):
-    username = "a.stragies@gmx.de"
+    username = "test.pom@testings.de"
     password = "lalalalala"
     login_page = LoginPage(driver)
     login_page.enter_username(username)
@@ -42,7 +42,7 @@ def review_driver(logged_in_driver):
 @pytest.fixture
 def shoppingcart_driver(logged_in_driver):
     yield logged_in_driver
-    time.sleep(10)
+    # if openpage isnot shoppingcartpage:
+    # navigate to shoppingcartpage
     shopcartpage = shoppingCartPage(logged_in_driver)
     shopcartpage.clear_and_empty_shoppingcart()
-   # logged_in_driver.refresh()

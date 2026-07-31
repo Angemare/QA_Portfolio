@@ -2,7 +2,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from main.basePage import basePage
-from datetime import date, timedelta
 
 
 class shopPage(basePage):
@@ -17,7 +16,7 @@ class shopPage(basePage):
     ALCOHOL_BUTTON = (By.XPATH, "//a[@href='#' and text()='Alocohol']")
     NO_ACCESS_TO_ALCOHOL_TEXT = (By.XPATH, "//div[@class='card-body']")
     QUANTITY_GALA_APPLES_INPUT = (By.XPATH, "//p[text()='Gala Apples']/ancestor::div[@class='card']//input")
-
+    ANIMATION_SHOP_PAGE_POPUP = (By.XPATH, "//div[@style='animation: 0.35s cubic-bezier(0.21, 1.02, 0.73, 1) 0s 1 normal forwards running go2645569136;']")
 
     @classmethod
     def open_shop_with_age(cls, driver):
@@ -34,7 +33,10 @@ class shopPage(basePage):
             EC.element_to_be_clickable(self.AGE_INPUT_CONFIRM_BUTTON)).click()
 
     def click_gala_apples_to_cart(self):
-        self.click(self.ADD_TO_CART_GALA_APPLES_BUTTON)
+        WebDriverWait(self.driver, 10).until(
+            EC.invisibility_of_element_located(self.ANIMATION_SHOP_PAGE_POPUP))
+        WebDriverWait(self.driver, 20).until(
+            EC.presence_of_element_located(self.ADD_TO_CART_GALA_APPLES_BUTTON)).click()
 
     def click_shopping_cart_icon(self):
         WebDriverWait(self.driver, 10).until(
