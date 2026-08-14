@@ -4,6 +4,7 @@ import pytest
 from selenium import webdriver
 from main.LoginPage import LoginPage
 from main.reviewPage import reviewPage
+from main.shopPage import shopPage
 from main.shoppingCartPage import shoppingCartPage
 
 
@@ -44,5 +45,8 @@ def shoppingcart_driver(logged_in_driver):
     yield logged_in_driver
     # if openpage isnot shoppingcartpage:
     # navigate to shoppingcartpage
+    if logged_in_driver.current_url != "https://grocerymate.masterschool.com/checkout":
+        shoppe = shopPage(logged_in_driver)
+        shoppe.click_shopping_cart_icon()
     shopcartpage = shoppingCartPage(logged_in_driver)
     shopcartpage.clear_and_empty_shoppingcart()
