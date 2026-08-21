@@ -46,7 +46,7 @@ def shoppingcart_driver(logged_in_driver):
     # if openpage isnot shoppingcartpage:
     # navigate to shoppingcartpage
     if logged_in_driver.current_url != "https://grocerymate.masterschool.com/checkout":
-        shoppe = shopPage(logged_in_driver)
-        shoppe.click_shopping_cart_icon()
+        logged_in_driver.get("https://grocerymate.masterschool.com/checkout")
+
     shopcartpage = shoppingCartPage(logged_in_driver)
     shopcartpage.clear_and_empty_shoppingcart()

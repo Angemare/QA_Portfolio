@@ -60,7 +60,7 @@ class shopPage(basePage):
         return WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located(self.NO_ACCESS_TO_ALCOHOL_TEXT))
 
-    def click_and_get_invalid_age_verification_msg(self):
+    def open_alcohol_section_and_get_message(self):
         self.click_alcohol_btn()
         return self.get_message_no_access_to_alcohol()
 

@@ -38,13 +38,11 @@ class reviewPage(basePage):
     def get_star_review(self):
         return WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located(self.SENT_STAR_REVIEW)).is_displayed()
-        #return self.find_element(self.SENT_STAR_REVIEW).is_displayed()
 
     # review löschen mit selenium locator finden
     def click_meatballs_menu(self):
-        WebDriverWait(self.driver, 10).until(
+        WebDriverWait(self.driver, 15).until(
             EC.element_to_be_clickable(self.CLICK_MEATBALLS_MENU_BUTTON)).click()
-        #self.click(self.CLICK_MEATBALLS_MENU_BUTTON)
 
     def delete_review(self):
         WebDriverWait(self.driver, 10).until(

@@ -31,7 +31,7 @@ def test_date_format_age_verification(date, logged_in_driver):
     shoppe.enter_age(date)
     shoppe.click_confirm_Age()
 
-    no_access = shoppe.click_and_get_invalid_age_verification_msg()
+    no_access = shoppe.open_alcohol_section_and_get_message()
     assert no_access.text.startswith("Underage Notice")
 
 
