@@ -1,10 +1,7 @@
-import time
-
 import pytest
 from selenium import webdriver
 from main.LoginPage import LoginPage
 from main.reviewPage import reviewPage
-from main.shopPage import shopPage
 from main.shoppingCartPage import shoppingCartPage
 
 
